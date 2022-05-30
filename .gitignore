@@ -1,0 +1,9 @@
+# Data and figure files
+*.nc
+*.png
+
+# Jupyter Book
+/book/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints/

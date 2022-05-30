@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: 🔗 Details
+  chapters:
+    - title: UNAVCO short course home page
+      url: https://www.unavco.org/event/2022-short-course-the-generic-mapping-tools-gmt-for-geodesy/
+    - title: Course materials on GitHub
+      url: https://github.com/GenericMappingTools/gmt-for-geodesy
+- caption: 🧑‍🏫 Tutorials
+  chapters:
+    - file: first-figure

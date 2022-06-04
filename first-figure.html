@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anatomy of a GMT figure &#8212; GMT for Geodesy</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="🌍 GMT for Geodesy Short Course" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">GMT for Geodesy</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   🌍 GMT for Geodesy Short Course
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  🔗 Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.unavco.org/event/2022-short-course-the-generic-mapping-tools-gmt-for-geodesy/">
+   UNAVCO short course home page
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/GenericMappingTools/gmt-for-geodesy">
+   Course materials on GitHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  🧑‍🏫 Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Anatomy of a GMT figure
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/first-figure.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/GenericMappingTools/gmt-for-geodesy"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/GenericMappingTools/gmt-for-geodesy/issues/new?title=Issue%20on%20page%20%2Ffirst-figure.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/GenericMappingTools/gmt-for-geodesy/edit/main/book/first-figure.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/GenericMappingTools/gmt-for-geodesy/main?urlpath=lab/tree/book/first-figure.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-gmt-session">
+   Creating a GMT session
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing-coastlines">
+   Drawing coastlines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing-a-map-frame">
+   Drawing a map frame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-minor-ticks">
+   Adding minor ticks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-grid-lines">
+   Adding grid lines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-title">
+   Adding a title
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-projection">
+   Choosing a projection
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Anatomy of a GMT figure</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-gmt-session">
+   Creating a GMT session
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing-coastlines">
+   Drawing coastlines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#drawing-a-map-frame">
+   Drawing a map frame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-minor-ticks">
+   Adding minor ticks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-grid-lines">
+   Adding grid lines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-title">
+   Adding a title
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-projection">
+   Choosing a projection
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="anatomy-of-a-gmt-figure">
+<h1>Anatomy of a GMT figure<a class="headerlink" href="#anatomy-of-a-gmt-figure" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will cover the fundamental concepts behind making figures with GMT, including starting a modern mode session, setting a region, drawing a map frame, choosing a projection, and adding simple elements (e.g., coastlines) to a map.</p>
+<p>Let’s get started!</p>
+<div class="section" id="creating-a-gmt-session">
+<h2>Creating a GMT session<a class="headerlink" href="#creating-a-gmt-session" title="Permalink to this headline">¶</a></h2>
+<p>In GMT modern mode, all processing and plotting commands are contained within a code block starting with <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code>.</p>
+<p>In the Jupyter Notebook, we use cell magic (<code class="docutils literal notranslate"><span class="pre">%%bash</span></code>) to show that the cell should be executed as a bash script. In a regular bash script,
+you would instead put <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">bash</span></code> at the top of your script. We also use the <code class="docutils literal notranslate"><span class="pre">IPython.display.Image</span> <span class="pre">class</span></code> to show the figures
+created by the GMT sessions in the Jupyter notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the class first. This only needs to be run once</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+# Start a modern mode session
+gmt begin # optionally append a session name (e.g., &#39;gmtsession&#39;) and one or more comman-separated figure formats (e.g., &#39;png,pdf&#39;)
+    # Any number of gmt and UNIX commands can go between &#39;gmt begin&#39; and &#39;gmt end&#39;
+# End a modern mode session
+gmt end # optionally append &#39;show&#39; to display the outputs
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="drawing-coastlines">
+<h2>Drawing coastlines<a class="headerlink" href="#drawing-coastlines" title="Permalink to this headline">¶</a></h2>
+<p>We need to specify the geographic bounding box that contains the data/features we want to plot. This bounding box is set using the <strong>-R</strong> common option and it has the format of a string containing the <strong>West/East/South/North</strong> (WESN) coordinates of the bounding box. We can lay down the coastlines for this region using <strong>-W</strong> option of the <code class="docutils literal notranslate"><span class="pre">coast</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+gmt begin coastlines png
+    gmt coast -R125/155/30/55 -W
+gmt end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coastlines.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/first-figure_6_0.png" src="_images/first-figure_6_0.png" />
+</div>
+</div>
+<p>Beyond the outlines, we can also color the land and water regions to make them stand out. Lets start with the water using the <strong>-W</strong> option of the <code class="docutils literal notranslate"><span class="pre">coast</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+gmt begin coastlines png
+    gmt coast -R125/155/30/55 -W -Slightblue
+gmt end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coastlines.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/first-figure_9_0.png" src="_images/first-figure_9_0.png" />
+</div>
+</div>
+<p>And now add the land in a light green color using the <strong>-G</strong> option.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+gmt begin coastlines png
+    gmt coast -R125/155/30/55 -W -Slightblue -Glightgreen
+gmt end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coastlines.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/first-figure_12_0.png" src="_images/first-figure_12_0.png" />
+</div>
+</div>
+<p>Alright, now we have a lovely figure with colored land and water plus some shorelines. But what are the coordinates associated with this map? Lets add a map frame to find out.</p>
+</div>
+<div class="section" id="drawing-a-map-frame">
+<h2>Drawing a map frame<a class="headerlink" href="#drawing-a-map-frame" title="Permalink to this headline">¶</a></h2>
+<p>Adding a nice frame with coordinates, ticks, and labels is one of the jobs of the <code class="docutils literal notranslate"><span class="pre">basemap</span></code> module. Here, we’ll use it to add automatic annotations (<code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>) around the figure we just made above. It will be the last item we lay on our figure canvas to guarantee that it sits above any other plot elements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+gmt begin coastlines png
+    gmt coast -R125/155/30/55 -W -Slightblue -Glightgreen
+    gmt basemap -Ba
+gmt end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coastlines.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/first-figure_16_0.png" src="_images/first-figure_16_0.png" />
+</div>
+</div>
+<p>Notice that the coordinates are automatically recognized as longitude and latitude and the tick spacing is chosen sensibly as well.</p>
+<p>There are many different ways in which we can customize the frame, from the ticks to the interval to the labels. Here we’ll only cover a few of the most common things you’d want to do. Starting with…</p>
+</div>
+<div class="section" id="adding-minor-ticks">
+<h2>Adding minor ticks<a class="headerlink" href="#adding-minor-ticks" title="Permalink to this headline">¶</a></h2>
+<p>The ticks with annotations are known as “major ticks” (controlled by the <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>) value. You can also add automatic “minor ticks” which have a smaller interval and won’t have annotations by adding <code class="docutils literal notranslate"><span class="pre">&quot;f&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">frame</span></code> argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+gmt begin coastlines png
+    gmt coast -R125/155/30/55 -W -Slightblue -Glightgreen
+    gmt basemap -Baf
+gmt end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coastlines.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/first-figure_20_0.png" src="_images/first-figure_20_0.png" />
+</div>
+</div>
+<p>The frame is now set to have both annotations and minor ticks, both of which are optional (so <code class="docutils literal notranslate"><span class="pre">frame=&quot;f&quot;</span></code> would mean only having minor un-annotated ticks). Try it out!</p>
+</div>
+<div class="section" id="adding-grid-lines">
+<h2>Adding grid lines<a class="headerlink" href="#adding-grid-lines" title="Permalink to this headline">¶</a></h2>
+<p>Grid lines are enabled by adding <code class="docutils literal notranslate"><span class="pre">&quot;g&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">frame</span></code>, just like we did for minor ticks. Again you can mix and match the three arguments <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;f&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;g&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+gmt begin coastlines png
+    gmt coast -R125/155/30/55 -W -Slightblue -Glightgreen
+    gmt basemap -Bafg
+gmt end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coastlines.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/first-figure_24_0.png" src="_images/first-figure_24_0.png" />
+</div>
+</div>
+<p>By default the spacing of the grid lines is the same as the annotated major ticks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding a frame with grid lines before you plot the colored land and water or an image will hide the grid lines beneath the subsequent plot. Make sure you put the call to <code class="docutils literal notranslate"><span class="pre">basemap</span></code> last to avoid this.</p>
+</div>
+</div>
+<div class="section" id="adding-a-title">
+<h2>Adding a title<a class="headerlink" href="#adding-a-title" title="Permalink to this headline">¶</a></h2>
+<p>To add a title to the figure, we need to pass in more than one <strong>-B</strong> arguments to <code class="docutils literal notranslate"><span class="pre">basemap</span></code>. The extra argument for adding a title is a string with the format <code class="docutils literal notranslate"><span class="pre">&quot;+tMy</span> <span class="pre">title</span> <span class="pre">goes</span> <span class="pre">here&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+gmt begin coastlines png
+    gmt coast -R125/155/30/55 -W -Slightblue -Glightgreen
+    gmt basemap -Bafg -B+t&#39;Coastlines around Japan&#39;
+gmt end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coastlines.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/first-figure_28_0.png" src="_images/first-figure_28_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="choosing-a-projection">
+<h2>Choosing a projection<a class="headerlink" href="#choosing-a-projection" title="Permalink to this headline">¶</a></h2>
+<p>In modern mode, GMT will chose a default projection based on the input data. Many projections are supported, which may often be better suited for your plots that the default selection (particularly around the polar regions or for larger global maps).</p>
+<p>For our case, let’s go with a <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/cookbook/map-projections.html#jc">Cassini projection</a>. To specify this, we need to pass an argument for the <strong>-J</strong> option to the first plot method we call. The projection specification is a string starting with a 1-letter code for the projection followed by the projection arguments (particular to each projection) and finishing off with the physical width of the figure (in centimeters or inches, usually). For the Cassini projection, this is what it would look like: <code class="docutils literal notranslate"><span class="pre">-JC142.5/40/15c</span></code> in which <code class="docutils literal notranslate"><span class="pre">C</span></code> is for Cassini projection, <code class="docutils literal notranslate"><span class="pre">142.5</span></code> is the central longitude of the projection set to the center of our region, <code class="docutils literal notranslate"><span class="pre">40</span></code> is the same for the central latitude, and <code class="docutils literal notranslate"><span class="pre">15c</span></code> means the plot will be 15 centimeters wide on the page (this influences the relative size of fonts and tick labels).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+gmt begin coastlines png
+    gmt coast -R125/155/30/55 -W -Slightblue -Glightgreen -JC140/40/15c
+    gmt basemap -Bafg -B+t&#39;Coastlines around Japan&#39;
+gmt end
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;coastlines.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/first-figure_31_0.png" src="_images/first-figure_31_0.png" />
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/cookbook/options.html#proj-codes">Projections Table</a> has links to examples for each projection along with a description of their parameters.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">🌍 GMT for Geodesy Short Course</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The GMT Team<br/>
+    
+      <div class="extra_footer">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+alt="Creative Commons License" style="border-width:0"
+src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br>
+This content is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
+4.0 International License</a>.
+
+All source code is distributed under the <a rel="license" href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT">LPGL</a> license.
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

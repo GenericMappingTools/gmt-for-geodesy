@@ -1,0 +1,58 @@
+# https://jupyterbook.org/en/stable/publish/gh-pages.html#automatically-host-your-book-with-github-actions
+name: deploy-book
+
+# Only run this when the main branch changes
+on:
+  # Uncomment the 'pull_request' line below to manually re-build Jupyter Book
+  pull_request:
+  push:
+    branches:
+      - main
+    # If your git repository has the Jupyter Book within some-subfolder next to
+    # unrelated files, you can make this run only if a file within that specific
+    # folder has been modified.
+    paths:
+      - '.github/workflows/deploy-book.yml'
+      - 'book/**'
+
+# This job installs dependencies, builds the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+    # Checkout current git repository
+    - name: Checkout
+      uses: actions/checkout@v3.0.2
+
+    # Install Mambaforge with conda-forge dependencies
+    - name: Setup Mambaforge
+      uses: conda-incubator/setup-miniconda@v2.1.1
+      with:
+        activate-environment: gmtforgeodesy
+        environment-file: environment.yml
+        python-version: ${{ matrix.python-version }}
+        channels: conda-forge
+        channel-priority: strict
+        miniforge-version: latest
+        miniforge-variant: Mambaforge
+        mamba-version: "*"
+        use-mamba: true
+
+    # Show installed pkg information for postmortem diagnostic
+    - name: List installed packages
+      run: mamba list
+
+    # Build the book
+    - name: Build the book
+      run: jupyter-book build book/
+
+    # Push the book's HTML to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.8.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: book/_build/html

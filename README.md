@@ -14,7 +14,7 @@ Material for the [GMT](https://github.com/GenericMappingTools/gmt) [2022 UNAVCO 
 - [Xiaohua Xu](https://github.com/Xiaohua-Eric-Xu), University of Texas at Austin
 
 **When**:
-- Tuesday July 6 - Friday July 9 (Times TBD)
+- Tuesday July 5 - Friday July 8 (Times TBD)
 
 **Where**: Online/Virtual
 

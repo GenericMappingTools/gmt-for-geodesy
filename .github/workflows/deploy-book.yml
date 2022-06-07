@@ -34,7 +34,7 @@ jobs:
       with:
         activate-environment: gmtforgeodesy
         environment-file: environment.yml
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.10
         channels: conda-forge
         channel-priority: strict
         miniforge-version: latest

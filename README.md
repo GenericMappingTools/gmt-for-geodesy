@@ -70,15 +70,15 @@ Participants will receive the zoom invitation at least 24 hours before the start
 | **Theme** | **Duration** | **UTC Time** |
 |-----------|--------------|--------------|
 | Welcome   | 10 min | 14:30-14:30  |
-| [UNIX and bash](bash)    | 25 min | 14:40-15:05  |
+| [UNIX and bash](1_bash)    | 25 min | 14:40-15:05  |
 | *Break*         | 10 min | 15:05-15:15  |
-| [GMT Basics 1](basics)    | 45 min |  15:15-16:00  |
+| [GMT Basics 1](2_basics)    | 45 min |  15:15-16:00  |
 | *Break*      | 60 min | 16:00-17:00  |
-| [GMT Basics 2](basics)    | 25 min |  17:00-17:25  |
+| [GMT Basics 2](2_basics)    | 25 min |  17:00-17:25  |
 | *Break*         | 10 min | 17:25-17:35  |
-| [Symbols and lines](line_symbols)      | 50 min | 17:35-18:25 |
+| [Symbols and lines](3_line_symbols)      | 50 min | 17:35-18:25 |
 | *Break*         | 10 min |  18:25-18:35  |
-| [Grids and images](grids)      | 50 min |  18:35-19:25  |
+| [Grids and images](4_grids)      | 50 min |  18:35-19:25  |
 | Wrap up      | 5 min |  19:25-19:30  |
 
 ### Day 2:
@@ -86,11 +86,11 @@ Participants will receive the zoom invitation at least 24 hours before the start
 | **Theme** | **Duration** | **UTC Time** |
 |-----------|--------------|--------------|
 | Welcome   | 10 min | 14:30-14:40  |
-| [Seismology](seismology) | 80 min |  14:40-16:00  |
+| [Seismology](5_seismology) | 80 min |  14:40-16:00  |
 | *Break*      | 60 min | 16:00-17:00  |
-| [Geodesy](geodesy)  | 70 min |  17:00-18:10  |
+| [Geodesy](6_geodesy)  | 70 min |  17:00-18:10  |
 | *Break*      | 10 min |  18:10-18:20 |
-| [Animations](animation)      | 65 min | 18:20-19:25  |
+| [Animations](7_animation)      | 65 min | 18:20-19:25  |
 | Wrap up      | 5 min |  19:25-19:30  |
 
 ### Day 3:

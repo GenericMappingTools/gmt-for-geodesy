@@ -53,7 +53,7 @@ There are 2 options for installing GMT 6.4.0:
    [instructions below](#building-gmt-from-source))
 
 Unfortunately, you cannot use your system package manager to install GMT because this
-course requires GMT 6.4, which is not available on most distributions yet.
+course requires GMT 6.4.0, which is not available on most distributions yet.
 
 Most Linux distributions come with a text editor installed. You may also
 [install Visual Studio Code](#install-a-text-editor) if you want but it is not required.
@@ -98,7 +98,7 @@ the workshop.**
 Linux and macOS usually come with one installed but Windows users aren't so lucky.
 To install a terminal with a bash shell on Windows:
 
-1. Download and install Git-for-Windows `Git-2.32.0-64-bit.exe` from
+1. Download and install Git-for-Windows `Git-2.36.1-64-bit.exe` from
    [their official website](https://gitforwindows.org/).
    There are
    [video instructions for installing](https://www.youtube.com/watch?v=339AEqk9c-8)

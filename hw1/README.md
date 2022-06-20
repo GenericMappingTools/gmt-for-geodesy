@@ -63,4 +63,4 @@ that you get the correct output.
 
    ![`gmt-for-geodesy/hw1/output/count.mp4`](output/count.gif)
 7. Tell us if you were able to complete homework 1 (and give us some feedback so we can better prepare for the course) by filling out
-   the following short [survey](https://forms.gle/FnEeTK9CLgYHBMzD9) by end of Saturday.
+   the following short [survey](https://forms.gle/szi71wDKSmgXgVaY6) by end of Saturday.

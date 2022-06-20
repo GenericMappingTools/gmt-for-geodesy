@@ -6,7 +6,7 @@ Planning and material for the 2022 UNAVCO GMT for Geodesy course
 [Paul Wessel](http://www.soest.hawaii.edu/wessel/),
 [Meghan Jones](https://github.com/meghanrjones),
 [Joaquim Luis](http://joa-quim.pt),
-[Federico Esteban](http://www.leouieda.com),
+[Federico Esteban](https://github.com/Esteban82),
 [Dongdong Tian](https://seisman.info/),
 [Xiaohua Xu](https://www.researchgate.net/profile/Xiaohua_Xu7)
 
@@ -14,7 +14,7 @@ Planning and material for the 2022 UNAVCO GMT for Geodesy course
 Liliane Burkhard [UH Manoa]
 
 **When**:
-July 5-7 (Tuesday-Thursday), 2022, 1430-1930 UTC
+July 5-7 (Tuesday-Thursday), 2022, **1430-1930 UTC**
 
 ```
 04:30 - 09:30 Hawaii
@@ -35,8 +35,8 @@ required **software already installed** (see [Installing](#installing) below).
 This 3-day course will cover the use of Generic Mapping Tools (GMT) in geodesy
 using UNIX shell scripting. Lectures and exercises will be given to teach the
 basic conventions of using GMT, such as plotting grids, images, and vector data
-(points, lines, polygons) as well as making animations. Labs will include both
-processing and mapping of various data sets relevant to geodesy.
+(points, lines, polygons, GPS velocities) as well as making animations. Labs will
+include both processing and mapping of various data sets relevant to geodesy.
 
 ## Installing
 
@@ -55,13 +55,14 @@ there are a few ways to ask for help:
 
 ## Video, Slides and Notes
 
-The workshop video recording, slides and shared notes will be available on Google Drive.
+The workshop video recording, slides and shared notes will be available on Google Drive after each day.
 
 The workshop video recording can also be found on the [UNAVCO YouTube Channel](https://youtube.com/playlist?list=PLzmugeDoplFPtWkrCqWWWZGZzPQr_k0Kx).
 
 ## Schedule
 
-Please make sure you know the local time for the sessions!  Use the [time zone converter](https://www.timeanddate.com/worldclock/converter.html) and compare UTC to your time zone.
+Please make sure you know the local time for the sessions!  Use the [time zone converter](https://www.timeanddate.com/worldclock/converter.html)
+and compare UTC to your time zone.
 Participants will receive the zoom invitation at least 24 hours before the start of the session.
 
 ### Day 1:
@@ -70,42 +71,39 @@ Participants will receive the zoom invitation at least 24 hours before the start
 |-----------|--------------|--------------|
 | Welcome   | 10 min | 14:30-14:30  |
 | [UNIX and bash](bash)    | 25 min | 14:40-15:05  |
-| *Break*         | 15 min | 15:05-15:20  |
-| [GMT Basics 1](basics)    | 40 min |  15:20-16:00  |
+| *Break*         | 10 min | 15:05-15:15  |
+| [GMT Basics 1](basics)    | 45 min |  15:15-16:00  |
 | *Break*      | 60 min | 16:00-17:00  |
-| [GMT Basics 2](basics)    | 40 min |  17:00-17:40  |
-| [Symbols and lines](line_symbols)      | 50 min | 17:40-18:30 |
-| *Break*         | 15 min |  18:30-18:45  |
-| [Grids and images](grids)      | 50 min |  18:45-19:50  |
-| Wrap up      | 10 min |  21:50-22:00  |
+| [GMT Basics 2](basics)    | 25 min |  17:00-17:25  |
+| *Break*         | 10 min | 17:25-17:35  |
+| [Symbols and lines](line_symbols)      | 50 min | 17:35-18:25 |
+| *Break*         | 10 min |  18:25-18:35  |
+| [Grids and images](grids)      | 50 min |  18:35-19:25  |
+| Wrap up      | 5 min |  19:25-19:30  |
 
 ### Day 2:
 
 | **Theme** | **Duration** | **UTC Time** |
 |-----------|--------------|--------------|
-| Welcome   | 10 min | 17:00-17:10  |
-| [Seismology](seismology) | 50 min |  17:10-18:00  |
-| *Break*      | 15 min |  18:00-18:15  |
-| [Geodesy](geodesy)  | 50 min |  18:15-19:05  |
-| *Break*      | 45 min |  19:05-19:50 |
-| [Animations](animation)      | 50 min | 19:50-20:40  |
-| *Break*         | 15 min | 20:40-20:55  |
-| Final projects      | 50 min | 20:55-21:45  |
-| Wrap up      | 10 min |  21:50-22:00  |
+| Welcome   | 10 min | 14:30-14:40  |
+| [Seismology](seismology) | 80 min |  14:40-16:00  |
+| *Break*      | 60 min | 16:00-17:00  |
+| [Geodesy](geodesy)  | 70 min |  17:00-18:10  |
+| *Break*      | 10 min |  18:10-18:20 |
+| [Animations](animation)      | 65 min | 18:20-19:25  |
+| Wrap up      | 5 min |  19:25-19:30  |
 
 ### Day 3:
 
 | **Theme** | **Duration** | **UTC Time** |
 |-----------|--------------|--------------|
-| Welcome   | 10 min | 17:00-17:10  |
-| [Seismology](seismology) | 50 min |  17:10-18:00  |
-| *Break*      | 15 min |  18:00-18:15  |
-| [Geodesy](geodesy)  | 50 min |  18:15-19:05  |
-| *Break*      | 45 min |  19:05-19:50 |
-| [Animations](animation)      | 50 min | 19:50-20:40  |
-| *Break*         | 15 min | 20:40-20:55  |
-| Final projects      | 50 min | 20:55-21:45  |
-| Wrap up      | 10 min |  21:50-22:00  |
+| Welcome   | 10 min | 14:30-14:40  |
+| Final projects      | 80 min | 14:40-16:00  |
+| *Break*      | 60 min | 16:00-17:00  |
+| Wrapper Demos      | 60 min | 17:00-18:00  |
+| *Break*      | 10 min |  18:00-18:10 |
+| Work on projects      | 75 min | 18:10-19:25  |
+| Wrap up      | 5 min |  19:25-19:30  |
 
 ## Communication During the Course
 

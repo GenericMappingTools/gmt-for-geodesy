@@ -7,7 +7,7 @@ Resources for the GMT animation session:
 
 **Resources**
 
-* My Google Slides on [GMT animation](https://docs.google.com/presentation/d/14asz0WH1c5gKj04ap6SmVSaH6SWY1eI49iKgofd3n7Y/edit?usp=sharing)
+* My Google Slides on [GMT animation](https://docs.google.com/presentation/d/1AjWAhDwm9h9VPB--Ys7JAiVYzuLnMxiXCj-DpTEaQzE/edit?usp=sharing)
 * The [GMT YouTube](https://www.youtube.com/c/TheGenericMappingTools) channel
 
 **Tasks**

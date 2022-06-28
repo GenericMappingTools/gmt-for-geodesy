@@ -8,7 +8,6 @@ gmt begin beachball-color-by-depth png
 	gmt makecpt -Cseis -T0/50
 	# -C: let compressive part color be determined by the z-value in the third column.
 	gmt meca meca.dat -JM15c -R110/120/30/35 -Sa1c -Baf -C
-	# Plot the colorbar in the Middle Right (MR), shift it 0.5 cm to the right.
-    # Set the label for the colorbar with -Bx+l,
-    gmt colorbar -DJMR+o1.5c/0c -Bx+l"Depth (km)"
+	# Plot the colorbar in the Middle Right (MR) and set the label using -Bx+l
+    gmt colorbar -DJMR -Bx+l"Depth (km)"
 gmt end show

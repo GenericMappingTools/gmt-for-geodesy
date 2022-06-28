@@ -18,8 +18,8 @@ GMT provides 4 seismology modules (see the summary figure below). The goal of th
 **Resources**
 
 - Focal Mechanisms Explained: What are those “beach balls”? https://www.youtube.com/watch?v=MomVOkyDdLo (about 6 minutes)
-- manpage of [meca](https://docs.generic-mapping-tools.org/6.2/supplements/seis/meca.html)
-- manpage of [coupe](https://docs.generic-mapping-tools.org/6.2/supplements/seis/coupe.html)
+- manpage of [meca](https://docs.generic-mapping-tools.org/6.4/supplements/seis/meca.html)
+- manpage of [coupe](https://docs.generic-mapping-tools.org/6.4/supplements/seis/coupe.html)
 - [Global CMT project](https://www.globalcmt.org/)
 
 ## Focal mechanism and beachball
@@ -46,18 +46,17 @@ which will be used in the following scripts.
 
 ## Plot beachballs on maps
 
-The [meca](https://docs.generic-mapping-tools.org/6.2/supplements/seis/meca.html) module
+The [meca](https://docs.generic-mapping-tools.org/6.4/supplements/seis/meca.html) module
 can plot beachballs on maps.
 
-[`-S`](https://docs.generic-mapping-tools.org/6.2/supplements/seis/meca.html#s) is the most important option of **meca**. It tells GMT the format of the input data,
+[`-S`](https://docs.generic-mapping-tools.org/6.4/supplements/seis/meca.html#s) is the most important option of **meca**. It tells GMT the format of the input data,
 beachball size, and other properties of optional title string.
 
 Other useful options:
 
-- **-M**: same size for all beachballs
 - **-E**: color for extensive quadrants
 - **-G**: color for compressional quadrants
-- **-C**: paint the compressional quadrants based on depth (you need to create a CPT by calling [`makecpt`](https://docs.generic-mapping-tools.org/6.2/makecpt.html) module first)
+- **-C**: paint the compressional quadrants based on depth (you need to create a CPT by calling [`makecpt`](https://docs.generic-mapping-tools.org/6.4/makecpt.html) module first)
 
 **A simple plot**: [beachball.sh](beachball.sh)
 
@@ -73,12 +72,12 @@ Other useful options:
 
 ## Plot beachballs on cross-sections
 
-[`coupe`](https://docs.generic-mapping-tools.org/6.2/supplements/seis/coupe.html) module can cut and plot beachballs in cross-sections (e.g., a vertical cross-section).
+[`coupe`](https://docs.generic-mapping-tools.org/6.4/supplements/seis/coupe.html) module can cut and plot beachballs in cross-sections (e.g., a vertical cross-section).
 
 Two most important options:
 
-- [`-S`](https://docs.generic-mapping-tools.org/6.2/supplements/seis/coupe.html#s): the same as **meca**
-- [`-A`](https://docs.generic-mapping-tools.org/6.2/supplements/seis/coupe.html#a): determine the cross-section
+- [`-S`](https://docs.generic-mapping-tools.org/6.4/supplements/seis/coupe.html#s): the same as **meca**
+- [`-A`](https://docs.generic-mapping-tools.org/6.4/supplements/seis/coupe.html#a): determine the cross-section
 
 Other options are the same as **meca**.
 

@@ -61,7 +61,7 @@ The workshop video recording can also be found on the [UNAVCO YouTube Channel](h
 
 ## Schedule
 
-Please make sure you know the local time for the sessions!  Use the [time zone converter](https://www.timeanddate.com/worldclock/converter.html)
+Please make sure you know the local time for the sessions!  Use the [time zone converter]([https://www.timeanddate.com/worldclock/converter.html](https://www.timeanddate.com/worldclock/fixedtime.html?msg=GMT+for+Geodesy+Short+Course+Day+1&iso=20220705T1430&p1=1440&ah=5))
 and compare UTC to your time zone.
 Participants will receive the zoom invitation at least 24 hours before the start of the session.
 

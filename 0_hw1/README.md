@@ -30,7 +30,7 @@ that you get the correct output.
    out where it is placed on your computer (each line is a command):
 
    ```
-   cd gmt-for-geodesy/hw1
+   cd gmt-for-geodesy/0_hw1
    pwd
    ```
 

@@ -21,7 +21,7 @@ July 5-7 (Tuesday-Thursday), 2022, **1430-1930 UTC**
 07:30 - 12:30 US Pacific Coast
 10:30 - 15:30 US East Coast
 15:30 - 20:30 London
-20:30 - 20:30 Calcutta
+20:30 - 01:30 Calcutta
 22:30 - 03:30 Hong Kong
 ```
 

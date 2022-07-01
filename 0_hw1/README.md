@@ -26,7 +26,7 @@ that you get the correct output.
    ```
 
    This will create a folder called `gmt-for-geodesy` in your computer.
-4. Run this command to navigate to the `hw1` folder in `gmt-for-geodesy` and figure
+4. Run this command to navigate to the `0_hw1` folder in `gmt-for-geodesy` and figure
    out where it is placed on your computer (each line is a command):
 
    ```
@@ -43,7 +43,7 @@ that you get the correct output.
    A window should pop up with a colored relief map of northern Africa. It should look
    like this (on a Mac, Preview may make it look a bit smoother):
 
-   ![`gmt-for-geodesy/hw1/output/test1.pdf`](output/test1.png)
+   ![`gmt-for-geodesy/0_hw1/output/test1.pdf`](output/test1.png)
 6. Run the [`test_2.sh`](test_2.sh) script:
 
    ```
@@ -51,7 +51,7 @@ that you get the correct output.
    ```
 
    This should produce 2 files called `count.mp4` and `count.webm` in the
-   `gmt-for-geodesy/hw1` folder. To open the mp4 movie (replace with `.webm`
+   `gmt-for-geodesy/0_hw1` folder. To open the mp4 movie (replace with `.webm`
    if the mp4 doesn't work on your system):
 
    * Mac: run `open count.mp4`
@@ -61,6 +61,6 @@ that you get the correct output.
    The result should be an animation with numbers counting from 0 to 24 that looks like
    this:
 
-   ![`gmt-for-geodesy/hw1/output/count.mp4`](output/count.gif)
+   ![`gmt-for-geodesy/0_hw1/output/count.mp4`](output/count.gif)
 7. Tell us if you were able to complete homework 1 (and give us some feedback so we can better prepare for the course) by filling out
    the following short [survey](https://forms.gle/szi71wDKSmgXgVaY6) by end of Saturday.

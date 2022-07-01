@@ -69,6 +69,7 @@ Most Linux distributions come with a text editor installed. You may also
 
    ```
    conda install gmt=6.4.0 -c conda-forge
+   conda install ffmpeg graphicsmagick -c conda-forge
    ```
 
 ## macOS
@@ -86,7 +87,7 @@ There are 4 options for installing GMT 6.4.0 under macOS:
 
 Make sure you also [have a text editor installed](#install-a-text-editor).
 
-We will use a bash shell during the course. To set your default shell to bash, enter `chsh -s /bin/bash` in the Terminal. 
+We will use a bash shell during the course. To set your default shell to bash, enter `chsh -s /bin/bash` in the Terminal.
 
 
 ## Windows

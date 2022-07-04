@@ -4,7 +4,7 @@ Planning and material for the 2022 UNAVCO GMT for Geodesy course
 
 **Instructors:**
 [Paul Wessel](http://www.soest.hawaii.edu/wessel/),
-[Meghan Jones](https://github.com/meghanrjones),
+[Max Jones](https://github.com/maxrjones),
 [Joaquim Luis](http://joa-quim.pt),
 [Federico Esteban](https://github.com/Esteban82),
 [Dongdong Tian](https://seisman.info/),

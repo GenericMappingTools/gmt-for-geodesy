@@ -143,9 +143,38 @@ starting with the default options and adding some tweaks to make it look a bit
 nicer.
 
 See the script [`4_contours.sh`](4_contours.sh). The output should look like:
-<img src="4_contours-1.png" width="60%">
 
-<img src="4_contours.png" width="50%">
+Basic map without contour lines. Coastlines draw in red.
+<img src="4_contours_0.png" width="80%">
+
+For adding default contour lines use:
+
+    gmt grdcontour @earth_synbath_10m
+
+<img src="4_contours_1.png" width="80%">
+
+Note that the contour 0 do not exactly matches with the coastline because they are two different data sets.
+
+To only draw the contour lines for negative values use:
+
+    gmt grdcontour @earth_synbath_10m -Ln
+
+<img src="4_contours_2.png" width="80%">
+
+To NOT draw countour shorter than 100 km.
+
+    gmt grdcontour @earth_synbath_10m -Ln -Q100k
+
+<img src="4_contours_3.png" width="80%">
+
+
+To now draw contours every 500 (m) use:
+
+
+<img src="4_contours_4.png" width="80%">
+
+
+<img src="4_contours_5.png" width="50%">
 
 #### Customize the intervals and pens
 

@@ -1,7 +1,7 @@
 # GMT Basics
 
 **Instructor:**
-[Meghan Jones](https://github.com/meghanrjones)
+[Max Jones](https://github.com/maxrjones)
 
 **Resources**
 

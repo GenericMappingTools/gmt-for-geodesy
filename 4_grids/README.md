@@ -2,79 +2,120 @@
 
 <img src="earth-relief.png" width="60%">
 
-This part of the tutorial is dedicated to plotting gridded data in GMT: contour
-plots, pseudo-color plots (images), etc.
+**Instructor:**
+[Federcio Esteban](https://github.com/Esteban82)
 
 ## Topics
 
-* [Main grid formats in GMT](#grid-formats)
-* [Plotting contours](#contour-plots)
-* [Plotting pseudo-color images](#pseudo-color-plots)
-* [Group exercise](#group-exercise)
+* [1. GMT Remote Data sets](#1-gmt-remote-datasets)
+* [2. Plotting Satelital images](#2.-satelital-image-plots)
+* [3. Relief images](#3.-relief-plots)
+* [4. Adding hill-shade](#4_pseudo-color-plots)
+* [5. Group exercise](#group-exercise)
+* [6. Plotting contours](#contour-plots)
 
-## Grid formats
+## 1. GMT Remote Data sets
 
-The main file format GMT uses for grids is called **netCDF**:
+Throughout this section, we'll use GMT's built-in Earth [remote data sets](https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#remote-data-sets). 
 
-> "self-describing, machine-independent data formats that support the creation,
-> access, and sharing of array-oriented scientific data"
->
-> https://en.wikipedia.org/wiki/NetCDF
+GMT offers several remote global data grids that you can access via our remote file mechanism. The first time you access one of these files, GMT will download the file and save it to the *server* directory under your GMT user directory [~/.gmt]. From then on we read the local file from there.
 
-The file contains information about:
+### Usage
 
-* Data values on the grid
-* Coordinates
-* Metadata: units, projections, etc
+In GMT, you may access such data by specifying the special name
 
-All stored in a [binary file](https://en.wikipedia.org/wiki/Binary_file) that
-support data compression and is widely accessible from other software (GIS,
-Matlab, Python, etc).
+ `@remote_name_rru`
 
-Further reading: https://docs.generic-mapping-tools.org/latest/gmt.html#grd-inout-full
+  * **@**: tells GMT to search the files in the GMT servers.
+  * **remote_name**: name of the remote data set.
+  * **rru**: defines the desired resolution.
 
-### Follow along
+**Only** when used in plots the data resolution is optional. If it is not given then we determine a resolution that will result in a nice-looking image.
 
-> Open a terminal and follow along with the exercise.
+More info at: https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#usage
 
-All GMT commands that operate on grids start with `grd`: `grdimage`,
-`grdsample`, `grdcontour`, etc.
+## 2. Satelital image plots
 
-Throughout this section, we'll use GMT's built-in Earth relief grids. The grids
-are available is several resolutions. They are downloaded automatically by GMT
-when you use the special `@earth_relief_rru` file name. See
-https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#global-earth-relief-grids
+<img src="1_earth-day.png" width="80%" aling=center>
 
-Use [`grdinfo`](https://docs.generic-mapping-tools.org/latest/grdinfo.html) to
-get information about a grid file:
+Let's start by making a satelitall image of the earth. The command for plotting images from grids or images in GMT is
+[`grdimage`](https://docs.generic-mapping-tools.org/latest/grdimage.html).
 
-```
-gmt grdinfo @earth_relief_10m
-```
+We serve two [NASA image products](https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html):
 
-The option `-Cn` will print only numerical information about the grid (
-`w e s n z0 z1 dx dy nx ny` by default):
+* Blue Marble (Daytime view): @earth_day
+* Black Marble (Nighttime view): @earth_night
 
-```
-gmt grdinfo @earth_relief_10m -Cn
-```
+Let's see script [`1_earth-day.sh`](1_earth-day.sh).
 
-Further reading: https://docs.generic-mapping-tools.org/latest/grdinfo.html
+## 3. Relief plots
 
-**BONUS**
+Each elevation data is paint with the same color.
+<img src="earth-relief.png" width="80%">
 
-Option `-o` can be combined with `-Cn` to select only one of the number printed
-out. This is useful if you need to use this information as input for other
-commands or assign them into *variables*. For example, we can get the grid
-spacing in the x dimension:
+We serve four global relief grids:
+* GEBCO: @earth_gebco
+* GEBCO sub-ice: @earth_gebcosi
+* SRTM15+v2.4: @earth_relief
+* SYNBTATH_V1.2: @earth_synbath
 
-```
-gmt grdinfo @earth_relief_10m -Cn -o6
-# Or store it in a variable with
-dx=`gmt grdinfo @earth_relief_10m -Cn -o6`
-```
+Run script [`2_earth-day.sh`](2_earth-relief.sh) to make a relief map of the Caribbean Sea. The output should look like this:
 
-## Contour plots
+<img src="2_earth-relief_1.png" width="60%" aling=center>
+
+### Color Palette Table (CPT)
+
+In the previous map each elevation value was assinged to a color through a colormap or **color palette table** (CPT) as they are called in GMT.
+
+By default, it will choose a CPT for you depending on the input grid. The Earth
+relief data are automatically assigned to the topographic CPT named *geo*.
+GMT has **many** CPTs: https://docs.generic-mapping-tools.org/latest/cookbook/cpts.html#of-colors-and-color-legends
+
+### Exercise:
+Go back to script [`2_earth-day.sh`](2_earth-relief.sh) and choose another CPT.
+
+For example, if you choose the *oleron* CPT then the should look like this:
+
+    gmt grdimage @earth_synbath -Coleron 
+
+<img src="2_earth-relief_2.png" width="60%" aling=center>
+
+### Adding a Color bar
+
+As can be seen in the map above, it would be useful to add a color bar to see the relationship between colors and elavations.
+For that, we use the module [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html). To just add a colorbar with the defaults values use:
+
+    gmt colorbar
+
+<img src="2_earth-relief_3.png" width="60%" aling=center>
+
+
+### Improving the Color bar
+
+Within [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html) there are many optional arguments to modify the default values:
+* [-B](https://docs.generic-mapping-tools.org/latest/colorbar.html#b): Set annotions.
+* [-D](https://docs.generic-mapping-tools.org/latest/colorbar.html#d): defines its location and dimensions.
+* [-W](https://docs.generic-mapping-tools.org/latest/colorbar.html#w): scale the values.
+
+For example, if you want a vertical colormap located to the right of the map, with a label and values expressed as km use: 
+
+
+    gmt colorbar -DJRM -Baf -By+l"km" -W0.001
+
+<img src="2_earth-relief_4.png" width="60%" aling=center>
+
+## 4. Hill shading
+
+GMT supports automatic hill shading (adding a shadow effect to the image based
+on the gradient of the data values). You can also apply custom shading
+(including shading one data type with another) using `grdgradient`.
+See the script [`images-shading.sh`](images-shading.sh). The output should look like:
+
+<img src="images-shading.png" width="60%">
+
+Further reading: https://docs.generic-mapping-tools.org/latest/grdgradient.html
+
+## 5. Contour plots
 
 **Finally let's get to the plotting already!**
 We'll start with *contour plots* first.
@@ -134,50 +175,6 @@ blue) and one for land (in gray). See the script
 
 Full list of GMT color names: https://docs.generic-mapping-tools.org/latest/gmtcolors.html
 
-## Pseudo-color plots
-
-These are the maps you might be used to seeing. Each data value is
-mapped to a color through a colormap or **color palette table** (CPT) as they
-are called in GMT.
-
-<img src="images-global.png" width="70%">
-
-GMT has **many** CPTs: https://docs.generic-mapping-tools.org/latest/cookbook/cpts.html#of-colors-and-color-legends
-
-The command for plotting pseudo-color images in GMT is
-[`grdimage`](https://docs.generic-mapping-tools.org/latest/grdimage.html).
-By default, it will choose a CPT for you depending on the input grid. The Earth
-relief data are automatically assigned a topographic CPT.
-
-Further reading: https://docs.generic-mapping-tools.org/latest/grdimage.html
-and https://docs.generic-mapping-tools.org/latest/tutorial/session-4.html#color-images
-
-### Follow along
-
-> Open VSCode (or your text editor of choice) and follow along with the
-> exercise.
-
-We'll continue with our map of Antarctica relief but this time we'll use color
-to represent values.
-
-#### Using the defaults
-
-First, plot the Earth relief data using the defaults, including a colorbar.
-See the script [`images.sh`](images.sh). The output should look like:
-
-<img src="images.png" width="50%">
-
-#### Hill shading
-
-GMT supports automatic hill shading (adding a shadow effect to the image based
-on the gradient of the data values). You can also apply custom shading
-(including shading one data type with another) using `grdgradient`.
-See the script [`images-shading.sh`](images-shading.sh). The output should look like:
-
-<img src="images-shading.png" width="60%">
-
-Further reading: https://docs.generic-mapping-tools.org/latest/grdgradient.html
-
 #### BONUS: Placing and customizing the colorbar
 
 We can control the placement of the colorbar using the `-D` option. We can also
@@ -225,7 +222,9 @@ You map should look something like this:
 
 <img src="exercise.png" width="70%">
 
-## EXTRA: Grid registration
+
+## Bonus
+### Grid registration
 
 The coordinates of grids and what the data values represent can be specified in
 two ways (known as the grid *registration*):

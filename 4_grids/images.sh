@@ -13,5 +13,7 @@ gmt begin images png
     gmt grdimage @earth_relief_10m
 
     # Add a colorbar using the default placement and style.
-    gmt colorbar
+#    gmt colorbar
+    gmt colorbar -DJRM
+
 gmt end show

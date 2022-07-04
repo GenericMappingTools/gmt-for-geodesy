@@ -11,12 +11,12 @@ gmt begin exercise png
     # Brazil. I added some padding around the region using the +r modifier
     # (the number is degrees). Use the default borders (-Bafg) and add a title
     # to the plot (-B+t)
-    gmt basemap -RBR+r2 -JM20c -Bafg -B+t"Relief map of Brazil"
+    gmt basemap -RAR,FK,GS+r2 -JM20c -Bafg -B+t"Relief map of Argentina"
 
     # Plot the earth relief data using the "geo" CPT. Adding shading at a 45
     # degree azimuth (+a45) with intensity scaled to 2 (+nt2; the default is
     # +nt1).
-    gmt grdimage @earth_relief_05m -I+a45+nt2 -Cgeo
+    gmt grdimage @earth_relief -I+a45+nt2 -Cgeo
 
     # Plate a colorbar on the right side at a larger offset in x (+o) and
     # customize the width and height (+w). Set the label interval (-B) and add

@@ -7,12 +7,14 @@
 
 ## Topics
 
-* [1. GMT Remote Data sets](#1-gmt-remote-datasets)
-* [2. Plotting Satelital images](#2.-satelital-image-plots)
-* [3. Relief images](#3.-relief-plots)
-* [4. Adding hill-shade](#4_pseudo-color-plots)
-* [5. Group exercise](#group-exercise)
-* [6. Plotting contours](#contour-plots)
+1. [GMT Remote Data sets](#1-gmt-remote-datasets)
+2. [Plotting Satelital images](#2.-satelital-image-plots)
+3. [Relief images](#3.-relief-plots)
+4. [Adding hill-shade](#4_pseudo-color-plots)
+5. [Plotting contours](#contour-plots)
+6. [Group exercise](#group-exercise)
+7. [Bonus](#bonus)
+
 
 ## 1. GMT Remote Data sets
 
@@ -51,7 +53,7 @@ Let's see script [`1_earth-day.sh`](1_earth-day.sh).
 ## 3. Relief plots
 
 Each elevation data is paint with the same color.
-<img src="earth-relief.png" width="80%">
+<img src="2_earth-relief_0.png" width="80%">
 
 We serve four global relief grids:
 * GEBCO: @earth_gebco
@@ -63,7 +65,7 @@ Run script [`2_earth-day.sh`](2_earth-relief.sh) to make a relief map of the Car
 
 <img src="2_earth-relief_1.png" width="60%" aling=center>
 
-### Color Palette Table (CPT)
+## 4.1. Color Palette Table (CPT)
 
 In the previous map each elevation value was assinged to a color through a colormap or **color palette table** (CPT) as they are called in GMT.
 
@@ -80,7 +82,7 @@ For example, if you choose the *oleron* CPT then the should look like this:
 
 <img src="2_earth-relief_2.png" width="60%" aling=center>
 
-### Adding a Color bar
+### 4.2. Color bar
 
 As can be seen in the map above, it would be useful to add a color bar to see the relationship between colors and elavations.
 For that, we use the module [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html). To just add a colorbar with the defaults values use:
@@ -107,54 +109,43 @@ For example, if you want a vertical colormap located to the right of the map, wi
 ## 4. Hill shading
 
 GMT supports automatic hill shading (adding a shadow effect to the image based
-on the gradient of the data values). You can also apply custom shading
-(including shading one data type with another) using `grdgradient`.
-See the script [`images-shading.sh`](images-shading.sh). The output should look like:
+on the gradient of the data values). 
+For the relief grids this can be done with [`grdimage -I`](https://docs.generic-mapping-tools.org/latest/grdimage.html#i) argument. To add a default hill shading efect just use:
 
-<img src="images-shading.png" width="60%">
+    gmt grdimage @earth_synbath -Coleron -I+d
 
-Further reading: https://docs.generic-mapping-tools.org/latest/grdgradient.html
+
+<img src="2_earth-relief_5.png" width="60%" aling=center>
+
+### Bonus. Adding Hill Shading effect to a Satellital Images
+
+If you want to apply a Hill Shading efect to a satellital image you have to use 
+[`grdgradient`](https://docs.generic-mapping-tools.org/latest/grdgradient.html) 
+to calculate an intesity grid first.
+
+See the script [`3_earth_day-shading.sh`](3_earth_day-shading.sh). The output should look like:
+
+<img src="3_earth-day-shading.png" width="80%" aling=center>
+
 
 ## 5. Contour plots
 
-**Finally let's get to the plotting already!**
-We'll start with *contour plots* first.
-
-<img src="contours-global.png" width="60%">
-
 The command for making contour plots from grids is
 [`grdcontour`](https://docs.generic-mapping-tools.org/latest/grdcontour.html).
+
 By default, it will plot using black contours with a reasonable interval.
 It has many options for configurations, which you are encouraged to explore.
 You can make very nice looking plots with `grdcontour`.
-
-Further reading: https://docs.generic-mapping-tools.org/latest/grdcontour.html
-
-### Follow along
-
-> Open VSCode (or your text editor of choice) and follow along with the
-> exercise.
+#### Plot with the default contour arguments
 
 We'll make contour plots of our Earth relief grid for Antarctica,
 starting with the default options and adding some tweaks to make it look a bit
 nicer.
 
-First, we need to set the `basemap` to the right region and use an appropriate
-projection. For Antarctica, we will go with a
-[South polar stereographic projection](https://docs.generic-mapping-tools.org/latest/cookbook/map-projections.html#polar-stereographic-map).
-The region can be set using *ISO 3166 country code*. This is a 2-letter code
-for every country/region in the world. GMT supports these codes as arguments to
-`-R`. This means that we can specify the region for Antarctica as `-RAQ`:
+See the script [`4_contours.sh`](4_contours.sh). The output should look like:
+<img src="4_contours-1.png" width="60%">
 
-Here is a list of ISO 3166 country codes: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
-
-Further reading: https://docs.generic-mapping-tools.org/latest/cookbook/map-projections.html
-
-#### Plot with the default contour arguments
-
-See the script [`contours.sh`](contours.sh). The output should look like:
-
-<img src="contours.png" width="50%">
+<img src="4_contours.png" width="50%">
 
 #### Customize the intervals and pens
 
@@ -174,27 +165,6 @@ blue) and one for land (in gray). See the script
 <img src="contours-fancy.png" width="50%">
 
 Full list of GMT color names: https://docs.generic-mapping-tools.org/latest/gmtcolors.html
-
-#### BONUS: Placing and customizing the colorbar
-
-We can control the placement of the colorbar using the `-D` option. We can also
-set the annotation intervals and add axis labels using `-B` (just like for a
-basemap).
-See the script [`images-colorbar.sh`](images-colorbar.sh). The output should look like:
-
-<img src="images-colorbar.png" width="50%">
-
-Further reading: https://docs.generic-mapping-tools.org/latest/colorbar.html
-
-#### BONUS: Changing the CPT
-
-Custom CPTs can be generated and configured with the `makecpt` command.
-See the script [`images-cpt.sh`](images-cpt.sh). The output should look like:
-
-<img src="images-cpt.png" width="50%">
-
-Further reading: https://docs.generic-mapping-tools.org/latest/cookbook/cpts.html#of-colors-and-color-legends
-and https://docs.generic-mapping-tools.org/latest/makecpt.html
 
 ## Group exercise
 

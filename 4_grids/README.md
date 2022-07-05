@@ -65,7 +65,7 @@ We serve four global relief grids:
 * GEBCO: @earth_gebco
 * GEBCO sub-ice: @earth_gebcosi
 * SRTM15+v2.4: @earth_relief
-* SYNBTATH_V1.2: @earth_synbath
+* SYNBATH_V1.2: @earth_synbath
 
 
 ### Exercise:

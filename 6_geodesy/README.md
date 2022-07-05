@@ -50,6 +50,10 @@ Inside we are plotting with 1.0 scale, and 0.65 confidence level corresponds to 
 
 <img src="vectors1.jpg" width="20%">
 
+```
+If you find the image of a different scale from yours, try setting a different PROJ_LENGTH_UNIT, e.g. gmt set PROJ_LENGTH_UNIT in
+```
+
 If we change the ***-Se1.0/0.65/10*** to ***-Se1.0/0.99/10***, which correspond to 3 sigma, the circle will increase
 
 <img src="vectors2.jpg" width="20%">

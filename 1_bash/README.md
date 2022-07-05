@@ -3,9 +3,9 @@
 Resources for the UNIX and bash session:
 
 **Instructor:**
-[Paul Wessel](http://www.soest.hawaii.edu/wessel/)
+[Max Jones](https://github.com/maxrjones)
 
-* My Google Slides on [UNIX and bash](https://docs.google.com/presentation/d/1aYJjFqL4dmLPrF5n-jKdM4MM26kAlvI4efPaHqPfjgI/edit?usp=sharing)
+* Google Slides on [UNIX and bash](https://docs.google.com/presentation/d/1aYJjFqL4dmLPrF5n-jKdM4MM26kAlvI4efPaHqPfjgI/edit?usp=sharing)
 * Learn more at [Software Carpentry](http://swcarpentry.github.io/shell-novice)
 * Will be using [Visual Studio Code](https://code.visualstudio.com/) with a split screen editor/terminal layout (Select Terminal->New Terminal)
 

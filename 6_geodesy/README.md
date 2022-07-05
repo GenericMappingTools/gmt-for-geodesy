@@ -35,7 +35,7 @@ The arrow attributes are mainly controlled by the ***-A[size]*** option with add
 ### Examples
 Below we will try these attributes with examples, first we'll create a script with the following command in your terminal
 ```
-gmt --new-script > demo.sh
+gmt --new-script=bash > demo.sh
 chmod +x demo.sh
 ```
 Then open the script for editing in your script editor. Change the corresponding shell in the first line to your designated shell, and change the following lines to
@@ -49,6 +49,8 @@ gmt end show
 Inside we are plotting with 1.0 scale, and 0.65 confidence level corresponds to 1 sigma gaussian error. The resulting plot looks like 
 
 <img src="vectors1.jpg" width="20%">
+
+If you find the image of a different scale from yours, try setting a different PROJ_LENGTH_UNIT, e.g. `gmt set PROJ_LENGTH_UNIT in`
 
 If we change the ***-Se1.0/0.65/10*** to ***-Se1.0/0.99/10***, which correspond to 3 sigma, the circle will increase
 
@@ -171,3 +173,17 @@ For the two methods of plotting deformation vectors, what are their differences?
 
 Pick an event at the UNAVCO geophysical event response page https://www.unavco.org/projects/project-support/geophysical-event-response/geophysical-event-response.html and plot the GNSS vectors on top of earth relief. Search "GAGE GPS/GNSS Displacement Estimates" to locate the correct file. 
 
+Some more options to experiment here: imposing the shading from topography to the deformation field. Use `gmt makecpt` to produce a colortable (e.g. -30 to 30), use `gmt grdmath` to create the amplitude of deformation, use `gmt grdsample` to sampled your DEM to the size of your deformation grid, run `gmt grdgradient` to produce shading that matches the deformation grid, use the ***-I*** option in `gmt grdimage` to call the gradient grid for shading. You could also use the ***-l*** option in `gmt grdvector` to create an automatic label for the vector field. Some useful commands are 
+```
+gmt makecpt -Cjet -T-30/30/5 -Z -D > d.cpt
+gmt grdmath dE.grd dE.grd MUL dN.grd dN.grd MUL ADD SQRT = d.grd
+gmt grdsample $dem -RdE.grd -Gdem_tmp.grd
+gmt grdgradient dem_tmp.grd -Ne.3 -A-45 -Gdem_tmp_gradient.grd
+...
+gmt grdimage d.grd -Cd.cpt -Idem_tmp_gradient.grd
+...
+gmt grdvector dE.grd dN.grd -S50 -I0.1 -W0.1p -Q10p+eA -l"30mm"+s0.6
+
+```
+
+<img src="demo8.jpg" width="40%">

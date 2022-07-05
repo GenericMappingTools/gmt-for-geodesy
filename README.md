@@ -8,7 +8,7 @@ Planning and material for the 2022 UNAVCO GMT for Geodesy course
 [Joaquim Luis](http://joa-quim.pt),
 [Federico Esteban](https://github.com/Esteban82),
 [Dongdong Tian](https://seisman.info/),
-[Xiaohua Xu](https://www.researchgate.net/profile/Xiaohua_Xu7)
+[Xiaohua Xu](https://www.ig.utexas.edu/staff/xiaohua-eric-xu/)
 
 **Assistants:**
 Liliane Burkhard [UH Manoa]

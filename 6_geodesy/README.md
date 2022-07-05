@@ -80,6 +80,18 @@ How to plot a right-lateral strike slip sign like below?
 
 <img src="vectors10.jpg" width="20%">
 
+Try coloring your arrows with the ***-C*** option, you may need to create a new input dataset with multiple `echo` command and make a new colortable using `gmt makecpt`
+```
+echo 0 0 1 1 0.2 0.2 0.2 > tmp.dat
+echo 0 0.5 0.5 0.5 0.1 0.1 0.5 >> tmp.dat
+echo 0 -0.5 1.5 1.5 0.3 0.3 0.8 >> tmp.dat
+...
+gmt makecpt -Crainbow -T0/2.5/0.5 -Z -D > vec.cpt
+...
+gmt velo tmp.dat $JRB -Se1.0/0.65/10 -W1p[+c] -A10p+ea+p[0.1] -Cvec.cpt
+```
+<img src="vectors11.jpg" width="20%">
+
 ## Plotting deformation field with vectors - Ridgecrest earthquakes
 This part we will plot a vectorized deformation map + shaded dem + GNSS data + fault traces + etc ...
 

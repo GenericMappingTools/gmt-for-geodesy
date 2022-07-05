@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 gmt begin beachball png
-	gmt meca meca.dat -JM10c -R110/120/30/35 -Sa1c -Baf
+    gmt basemap -JM10c -R110/120/30/35 -Baf
+    gmt meca meca.dat -Sa1c
 gmt end show

@@ -58,9 +58,21 @@ Other useful options:
 - **-G**: color for compressional quadrants
 - **-C**: paint the compressional quadrants based on depth (you need to create a CPT by calling [`makecpt`](https://docs.generic-mapping-tools.org/6.4/makecpt.html) module first)
 
-**A simple plot**: [beachball.sh](beachball.sh)
+**The simplest example**: [beachball.sh](beachball.sh)
 
 <img src="beachball.png" width="600">
+
+**Beachballs with the same size**: [beachball-same-size.sh](beachball-same-size.sh)
+
+<img src="beachball-same-size.png" width="600">
+
+**Beachballs with  customized event labels**: [beachball-customized-labels.sh](beachball-customized-labels.sh)
+
+<img src="beachball-customized-labels.png" width="600">
+
+**Beachballs without event labels**: [beachball-no-labels.sh](beachball-no-labels.sh)
+
+<img src="beachball-no-labels.png" width="600">
 
 **Different colors**: [beachball-colors.sh](beachball-colors.sh)
 
@@ -74,12 +86,8 @@ Other useful options:
 
 [`coupe`](https://docs.generic-mapping-tools.org/6.4/supplements/seis/coupe.html) module can cut and plot beachballs in cross-sections (e.g., a vertical cross-section).
 
-Two most important options:
-
-- [`-S`](https://docs.generic-mapping-tools.org/6.4/supplements/seis/coupe.html#s): the same as **meca**
-- [`-A`](https://docs.generic-mapping-tools.org/6.4/supplements/seis/coupe.html#a): determine the cross-section
-
-Other options are the same as **meca**.
+Most options of **coupe** have the same meaning as in **meca**. The most important
+and unique option is [`-A`](https://docs.generic-mapping-tools.org/6.4/supplements/seis/coupe.html#a), to determine the cross-section.
 
 There are different ways to specify the geometry of a cross-section. Here we will
 use **-Aa** as an example. The full syntax of the **-A** option is:
@@ -141,8 +149,8 @@ You will be split into teams to work on an exercise:
 **TIPS**
 
 - You need to use `-Sd`, `-Sm` or `-Sz` for GCMT solutions, **NOT** `-Sa`.
-- Use `-S+f0p` to set the font size of the event labels to zero, so that
-  **meca** and **coupe** won't plot the event lables
+- Use `+f0p` in the `-S` option to set the font size of the event labels to zero,
+  so that **meca** and **coupe** won't plot the event lables
 - You may have white beachballs if the event depth is out of the CPT range
 
 Map view (**meca**)        |  Cross-section view (**coupe**)

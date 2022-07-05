@@ -189,7 +189,6 @@ The previous map looks overloaded. You can filter out the contour lines shorter 
 
 <img src="4_contours_3.png" width="80%">
 
-
 ### 7.4. Sets the contour interval
 
 In the previous map, the countour lines are drawn every 1000 m. If you want to draw contours every 200 (m) you can use:
@@ -217,6 +216,7 @@ Finally, you can use -A to add annotated contour lines. For example if you want 
 
 
 ## Group exercise
+
 
 You will be split into teams to work on an exercise:
 
@@ -277,3 +277,6 @@ specify which version you want by appending `_p` (for pixel) or `_g` (for
 gridline) to the file name (for example, `@earth_relief_10m_p`).
 
 Further reading: https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#global-earth-relief-grids
+
+# Credits
+The group excerise and bonus sections were taken from the [2021 edition](https://github.com/GenericMappingTools/2021-unavco-course/blob/main/grids/README.md) done by Leonardo Uieda.

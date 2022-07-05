@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Script adapted for https://github.com/GenericMappingTools/2021-unavco-course/blob/main/grids/exercise.sh 
+# Script adapted from https://github.com/GenericMappingTools/2021-unavco-course/blob/main/grids/exercise.sh)
 # done by Leonardo Uieda,
 # Exercise: make a pseudo-color map with overlayed contours and hillshading of
 # the country of your choice.

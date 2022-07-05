@@ -14,7 +14,6 @@
 5. [Color bar](#5.-color-bar)
 6. [Hill shading](#6.-hill-shading)
 7. [Contour plots](#7.-contour-plots)
-8. [Bonus](#8.-bonus)
 
 
 ## 1. GMT Remote Data sets
@@ -74,8 +73,8 @@ We serve four global relief grids:
 Run script [`2_earth-day.sh`](2_earth-relief.sh) to make a relief map of the Caribbean Sea. The output should look like this:
 
 <img src="2_earth-relief_1.png" width="80%" aling=center>
-***
 
+***
 ## 4. Color Palette Table (CPT)
 
 In the previous map each elevation value was assinged to a color through a colormap or **color palette table** (CPT) as they are called in GMT. By default, it will choose a CPT for you depending on the input grid. 
@@ -92,8 +91,8 @@ For example, if you choose the *oleron* CPT then the should look like this:
     gmt grdimage @earth_synbath -Coleron 
 
 <img src="2_earth-relief_2.png" width="60%" aling=center>
-***
 
+***
 ## 5. Color bar
 
 As can be seen in the map above, it would be useful to add a color bar to see the relationship between colors and elavations.
@@ -119,7 +118,6 @@ For example, if you want a vertical colormap located to the right of the map, wi
 <img src="2_earth-relief_4.png" width="60%" aling=center>
 
 ***
-
 ## 6. Hill shading
 
 GMT supports automatic hill shading (adding a shadow effect to the image based
@@ -143,7 +141,6 @@ See the script [`3_earth_day-shading.sh`](3_earth_day-shading.sh). The output sh
 <img src="3_earth-day-shading.png" width="80%" aling=center>
 
 ***
-
 ## 7. Contour plots
 
 The command for making contour plots from grids is
@@ -156,7 +153,6 @@ We will use the following arguments to modify the contours:
 * [-C](https://docs.generic-mapping-tools.org/latest/grdcontour.html#c): Sets the contour interval.
 * [-L](https://docs.generic-mapping-tools.org/latest/grdcontour.html#l): Limit range.
 * [-Q](https://docs.generic-mapping-tools.org/latest/grdcontour.html#q): Do not draw smaller contours.
-
 * [-W](https://docs.generic-mapping-tools.org/latest/colorbar.html#w): set pen attributes for regular contour (-Wc) or annoted contours (-Wa).
 
 ### 7.1. Plot with the default contour arguments
@@ -220,7 +216,7 @@ Finally, you can use -A to add annotated contour lines. For example if you want 
 <img src="4_contours_6.png" width="80%">
 
 
-## 8. Group exercise
+## Group exercise
 
 You will be split into teams to work on an exercise:
 
@@ -248,8 +244,7 @@ You map should look something like this:
 <img src="5_exercise.png" width="80%">
 
 
-## 9. Bonus
-### Grid registration
+## Bonus: Grid registration
 
 The coordinates of grids and what the data values represent can be specified in
 two ways (known as the grid *registration*):

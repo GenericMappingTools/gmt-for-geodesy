@@ -171,7 +171,7 @@ For the two methods of plotting deformation vectors, what are their differences?
 
 Pick an event at the UNAVCO geophysical event response page https://www.unavco.org/projects/project-support/geophysical-event-response/geophysical-event-response.html and plot the GNSS vectors on top of earth relief. Search "GAGE GPS/GNSS Displacement Estimates" to locate the correct file. 
 
-Some more options to experiment here, try impose the shading from topography to the deformation field. Use `gmt makecpt` to produce a colortable (e.g. -30 to 30), use `gmt grdmath` to create the amplitude of deformation, use `gmt grdsample` to sampled your DEM to the size of your deformation grid, run `gmt grdgradient` to produce shading that matches the deformation grid, use the ***-I*** option in `gmt grdimage` to call the gradient grid for shading. Some useful commands are 
+Some more options to experiment here, try impose the shading from topography to the deformation field. Use `gmt makecpt` to produce a colortable (e.g. -30 to 30), use `gmt grdmath` to create the amplitude of deformation, use `gmt grdsample` to sampled your DEM to the size of your deformation grid, run `gmt grdgradient` to produce shading that matches the deformation grid, use the ***-I*** option in `gmt grdimage` to call the gradient grid for shading. You could also use the ***-l*** option in `gmt grdvector` to create an automatic label for the vector field. Some useful commands are 
 ```
 gmt makecpt -Cjet -T-30/30/5 -Z -D > d.cpt
 gmt grdmath dE.grd dE.grd MUL dN.grd dN.grd MUL ADD SQRT = d.grd
@@ -180,6 +180,7 @@ gmt grdgradient dem_tmp.grd -Ne.3 -A-45 -Gdem_tmp_gradient.grd
 ...
 gmt grdimage d.grd -Cd.cpt -Idem_tmp_gradient.grd
 ...
+gmt grdvector dE.grd dN.grd -S50 -I0.1 -W0.1p -Q10p+eA -l"30mm"+s0.6
 
 ```
 

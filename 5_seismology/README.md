@@ -141,8 +141,8 @@ You will be split into teams to work on an exercise:
 **TIPS**
 
 - You need to use `-Sd`, `-Sm` or `-Sz` for GCMT solutions, **NOT** `-Sa`.
-- Use `-i0-9` to read the first 10 columns, so that **meca** and **coupe** won't
-  plot the event lables
+- Use `-S+f0p` to set the font size of the event labels to zero, so that
+  **meca** and **coupe** won't plot the event lables
 - You may have white beachballs if the event depth is out of the CPT range
 
 Map view (**meca**)        |  Cross-section view (**coupe**)

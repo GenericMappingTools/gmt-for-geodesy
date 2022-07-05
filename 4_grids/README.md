@@ -42,7 +42,7 @@ More info at: https://docs.generic-mapping-tools.org/latest/datasets/remote-data
 
 <img src="1_earth-day.png" width="80%" aling=center>
 
-Let's start by making a satelitall image of the earth. The command for plotting images from grids or images is
+Let's start by making a satellite image of the earth. The command for plotting images from grids or images is
 [`grdimage`](https://docs.generic-mapping-tools.org/latest/grdimage.html). 
 
 We serve two [NASA image products](https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html):
@@ -77,10 +77,9 @@ Run script [`2_earth-day.sh`](2_earth-relief.sh) to make a relief map of the Car
 ***
 ## 4. Color Palette Table (CPT)
 
-In the previous map each elevation value was assinged to a color through a colormap or **color palette table** (CPT) as they are called in GMT. By default, it will choose a CPT for you depending on the input grid. 
+In the previous map each elevation value was assigned to a color through a colormap or **color palette table** (CPT) as they are called in GMT. By default, it will choose a CPT for you depending on the input grid. 
 
-The Earth
-relief data are automatically assigned to the topographic CPT named *geo*.
+The Earth relief data is automatically assigned to the topographic CPT named *geo*.
 GMT has **many** CPTs: https://docs.generic-mapping-tools.org/latest/cookbook/cpts.html#of-colors-and-color-legends
 
 ### Exercise:
@@ -95,7 +94,7 @@ For example, if you choose the *oleron* CPT then the should look like this:
 ***
 ## 5. Color bar
 
-As can be seen in the map above, it would be useful to add a color bar to see the relationship between colors and elavations.
+As can be seen in the map above, it would be useful to add a color bar to see the relationship between colors and elavation.
 For that, we use the module [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html). To just add a colorbar with the defaults values use:
 
     gmt colorbar
@@ -122,7 +121,7 @@ For example, if you want a vertical colormap located to the right of the map, wi
 
 GMT supports automatic hill shading (adding a shadow effect to the image based
 on the gradient of the data values). 
-For the relief grids this can be done with [`grdimage -I`](https://docs.generic-mapping-tools.org/latest/grdimage.html#i) argument. To add a default hill shading efect just use:
+For the relief grids this can be done with [`grdimage -I`](https://docs.generic-mapping-tools.org/latest/grdimage.html#i) argument. To add a default hill shading effect just use:
 
     gmt grdimage @earth_synbath -Coleron -I+d
 
@@ -132,9 +131,9 @@ For the relief grids this can be done with [`grdimage -I`](https://docs.generic-
 ***
 ### Challenge: Adding Hill Shading effect to a Satellital Image
 
-If you want to apply a Hill Shading efect to a satellital image you have to use 
+If you want to apply a Hill Shading effect to a satellite image you have to use 
 [`grdgradient`](https://docs.generic-mapping-tools.org/latest/grdgradient.html) 
-to calculate an intesity grid first.
+To calculate an intensity grid first.
 
 See the script [`3_earth_day-shading.sh`](3_earth_day-shading.sh). The output should look like:
 
@@ -157,9 +156,8 @@ We will use the following arguments to modify the contours:
 
 ### 7.1. Plot with the default contour arguments
 
-We'll make contour plots of our Synbath relief grid for the Caribbean Sea,
-starting with the default options and adding some tweaks to make it look a bit
-nicer.
+We'll make contour plots of our Synbath relief grid for the Caribbean Sea, 
+starting with the default options and adding some tweaks to make it look a bit nicer.
 
 This is the base map (without contour lines) for the script [`4_contours.sh`](4_contours.sh).
 
@@ -191,7 +189,7 @@ The previous map looks overloaded. You can filter out the contour lines shorter 
 
 ### 7.4. Sets the contour interval
 
-In the previous map, the countour lines are drawn every 1000 m. If you want to draw contours every 200 (m) you can use:
+On the previous map, the contour lines are drawn every 1000 m. If you want to draw contours every 200 (m) you can use:
 
     gmt grdcontour @earth_synbath -Ln -Q500k -C200
 
@@ -208,7 +206,7 @@ If you want to draw dark gray thinnest dashed contour lines you can use:
 
 ### 7.6. Add annotated contour lines
 
-Finally, you can use -A to add annotated contour lines. For example if you want to add labels with font 5, within a white box with border for every 2000 contour line you can use:
+Finally, you can use -A to add annotated contour lines. For example, if you want to add labels with font 5, within a white box with border for every 2000 contour line you can use:
 
     gmt grdcontour @earth_synbath -Ln -Q500k -C200 -Wc0,gray15,dashed -A2000+f5+p+gwhite -Wa0
 

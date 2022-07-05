@@ -5,7 +5,7 @@
 
 **Resources**
 
-* My Google Slides on [GMT Basics](https://docs.google.com/presentation/d/113JgVEMLuIMQq021VMiYyi0Z1EEBlo-RvbkUBK0DmLs/edit#slide=id.p)
+* My Google Slides on [GMT Basics](https://docs.google.com/presentation/d/1vijlFVi6mp3xdWXcep9Co40FqnhmXKMdEhalhQiO5l8/edit?usp=sharing)
 
 **Tasks**
 

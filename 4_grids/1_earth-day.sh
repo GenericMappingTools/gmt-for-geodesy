@@ -13,6 +13,9 @@ gmt begin 1_earth-day png
 #   Plot other things on top of the image
     gmt coast -N1/thinnest,red     # National Boundaries
 
+#   Draw simple border
+    gmt basemap -B0
+
 gmt end #show
 
 # Exercise

@@ -5,29 +5,28 @@
 
 gmt begin 2_earth-relief png
     # Sets the region and projection of the map for the map. (-B+n plots nohing)
-    gmt basemap -R"Caribbean Sea" -JM15c -B+n
+    #gmt basemap -R"Caribbean Sea" -JM15c -B+n
+    gmt basemap -R-88.9369/-59.3818/7.9049/22.7054 -JM15c -B+n
 
-    # Plot the GMT Earth relief data
-    gmt grdimage @earth_synbath          # Using default CPT
-    #gmt grdimage @earth_synbath -Coleron  # Using another CPT
+    # 2. Plot the GMT Earth relief data
+    # gmt grdimage @earth_synbath          # Using default CPT
+    # gmt grdimage @earth_synbath -Coleron  # Using another CPT
 
-    # With automatic hill shading (-I+d)
-    # gmt grdimage @earth_synbath -I+d
+#   5. With automatic hill shading (-I+d)
+    gmt grdimage @earth_synbath -Coleron -I+d
 
-    # Add a colorbar
+#   3. Add a colorbar
     # gmt colorbar           # Using the default placement and style.
-    # gmt colorbar -DJRM      # Place outside the map to the Right Middle
+    gmt colorbar -DJRM      # Place outside the map to the Right Middle
 
-#   Other options
+#   4. Other options for the colorbar
     # gmt colorbar -DJRM -Ba1000f          # Anotation every 1000 values
     # gmt colorbar -DJRM -Ba1000f -By+l"m" # Add label in Y axis
     # gmt colorbar -DJRM -Baf -By+l"km" -W0.001 # Scale the values (to km)
 
-
-#   Map Frame
+#   6. Map Frame
     gmt basemap -Baf
 gmt end #show
-
 
 #   Bonus Exercise:
 #   Try the other options for the colorbar

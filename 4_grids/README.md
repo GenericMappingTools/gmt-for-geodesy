@@ -1,18 +1,20 @@
 # Plotting grids and images
 
-<img src="earth-relief.png" width="60%">
+<img src="2_earth-relief_0.png" width="80%">
 
 **Instructor:**
 [Federcio Esteban](https://github.com/Esteban82)
 
 ## Topics
 
-* [1. GMT Remote Data sets](#1-gmt-remote-datasets)
-* [2. Plotting Satelital images](#2.-satelital-image-plots)
-* [3. Relief images](#3.-relief-plots)
-* [4. Adding hill-shade](#4_pseudo-color-plots)
-* [5. Group exercise](#group-exercise)
-* [6. Plotting contours](#contour-plots)
+1. [GMT Remote Data sets](#1.-gmt-remote-data-sets)
+2. [Plotting Satelital images](#2.-satelital-image-plots)
+3. [Relief images](#3.-relief-plots)
+4. [Color Palette Table (CPT)](#4.-color-palette-table-(cpt))
+5. [Color bar](#5.-color-bar)
+6. [Hill shading](#6.-hill-shading)
+7. [Contour plots](#7.-contour-plots)
+
 
 ## 1. GMT Remote Data sets
 
@@ -22,9 +24,9 @@ GMT offers several remote global data grids that you can access via our remote f
 
 ### Usage
 
-In GMT, you may access such data by specifying the special name
+In GMT, you may access such data by specifying the special name:
 
- `@remote_name_rru`
+    @remote_name_rru
 
   * **@**: tells GMT to search the files in the GMT servers.
   * **remote_name**: name of the remote data set.
@@ -34,24 +36,30 @@ In GMT, you may access such data by specifying the special name
 
 More info at: https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#usage
 
+***
+
 ## 2. Satelital image plots
 
 <img src="1_earth-day.png" width="80%" aling=center>
 
-Let's start by making a satelitall image of the earth. The command for plotting images from grids or images in GMT is
-[`grdimage`](https://docs.generic-mapping-tools.org/latest/grdimage.html).
+Let's start by making a satelitall image of the earth. The command for plotting images from grids or images is
+[`grdimage`](https://docs.generic-mapping-tools.org/latest/grdimage.html). 
 
 We serve two [NASA image products](https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html):
 
 * Blue Marble (Daytime view): @earth_day
 * Black Marble (Nighttime view): @earth_night
 
-Let's see script [`1_earth-day.sh`](1_earth-day.sh).
+### Exercise
 
+Let's see script [`1_earth-day.sh`](1_earth-day.sh) to make the above map.
+
+***
 ## 3. Relief plots
 
+<img src="2_earth-relief_0.png" width="80%">
+
 Each elevation data is paint with the same color.
-<img src="earth-relief.png" width="80%">
 
 We serve four global relief grids:
 * GEBCO: @earth_gebco
@@ -59,15 +67,19 @@ We serve four global relief grids:
 * SRTM15+v2.4: @earth_relief
 * SYNBTATH_V1.2: @earth_synbath
 
+
+### Exercise:
+
 Run script [`2_earth-day.sh`](2_earth-relief.sh) to make a relief map of the Caribbean Sea. The output should look like this:
 
-<img src="2_earth-relief_1.png" width="60%" aling=center>
+<img src="2_earth-relief_1.png" width="80%" aling=center>
 
-### Color Palette Table (CPT)
+***
+## 4. Color Palette Table (CPT)
 
-In the previous map each elevation value was assinged to a color through a colormap or **color palette table** (CPT) as they are called in GMT.
+In the previous map each elevation value was assinged to a color through a colormap or **color palette table** (CPT) as they are called in GMT. By default, it will choose a CPT for you depending on the input grid. 
 
-By default, it will choose a CPT for you depending on the input grid. The Earth
+The Earth
 relief data are automatically assigned to the topographic CPT named *geo*.
 GMT has **many** CPTs: https://docs.generic-mapping-tools.org/latest/cookbook/cpts.html#of-colors-and-color-legends
 
@@ -80,7 +92,8 @@ For example, if you choose the *oleron* CPT then the should look like this:
 
 <img src="2_earth-relief_2.png" width="60%" aling=center>
 
-### Adding a Color bar
+***
+## 5. Color bar
 
 As can be seen in the map above, it would be useful to add a color bar to see the relationship between colors and elavations.
 For that, we use the module [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html). To just add a colorbar with the defaults values use:
@@ -90,7 +103,7 @@ For that, we use the module [`colorbar`](https://docs.generic-mapping-tools.org/
 <img src="2_earth-relief_3.png" width="60%" aling=center>
 
 
-### Improving the Color bar
+### 5.1 Improving the Color bar
 
 Within [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html) there are many optional arguments to modify the default values:
 * [-B](https://docs.generic-mapping-tools.org/latest/colorbar.html#b): Set annotions.
@@ -104,99 +117,106 @@ For example, if you want a vertical colormap located to the right of the map, wi
 
 <img src="2_earth-relief_4.png" width="60%" aling=center>
 
-## 4. Hill shading
+***
+## 6. Hill shading
 
 GMT supports automatic hill shading (adding a shadow effect to the image based
-on the gradient of the data values). You can also apply custom shading
-(including shading one data type with another) using `grdgradient`.
-See the script [`images-shading.sh`](images-shading.sh). The output should look like:
+on the gradient of the data values). 
+For the relief grids this can be done with [`grdimage -I`](https://docs.generic-mapping-tools.org/latest/grdimage.html#i) argument. To add a default hill shading efect just use:
 
-<img src="images-shading.png" width="60%">
+    gmt grdimage @earth_synbath -Coleron -I+d
 
-Further reading: https://docs.generic-mapping-tools.org/latest/grdgradient.html
 
-## 5. Contour plots
+<img src="2_earth-relief_5.png" width="80%" aling=center>
 
-**Finally let's get to the plotting already!**
-We'll start with *contour plots* first.
+***
+### Challenge: Adding Hill Shading effect to a Satellital Image
 
-<img src="contours-global.png" width="60%">
+If you want to apply a Hill Shading efect to a satellital image you have to use 
+[`grdgradient`](https://docs.generic-mapping-tools.org/latest/grdgradient.html) 
+to calculate an intesity grid first.
+
+See the script [`3_earth_day-shading.sh`](3_earth_day-shading.sh). The output should look like:
+
+<img src="3_earth-day-shading.png" width="80%" aling=center>
+
+***
+## 7. Contour plots
 
 The command for making contour plots from grids is
 [`grdcontour`](https://docs.generic-mapping-tools.org/latest/grdcontour.html).
+
 By default, it will plot using black contours with a reasonable interval.
 It has many options for configurations, which you are encouraged to explore.
-You can make very nice looking plots with `grdcontour`.
+We will use the following arguments to modify the contours:
 
-Further reading: https://docs.generic-mapping-tools.org/latest/grdcontour.html
+* [-C](https://docs.generic-mapping-tools.org/latest/grdcontour.html#c): Sets the contour interval.
+* [-L](https://docs.generic-mapping-tools.org/latest/grdcontour.html#l): Limit range.
+* [-Q](https://docs.generic-mapping-tools.org/latest/grdcontour.html#q): Do not draw smaller contours.
+* [-W](https://docs.generic-mapping-tools.org/latest/colorbar.html#w): set pen attributes for regular contour (-Wc) or annoted contours (-Wa).
 
-### Follow along
+### 7.1. Plot with the default contour arguments
 
-> Open VSCode (or your text editor of choice) and follow along with the
-> exercise.
-
-We'll make contour plots of our Earth relief grid for Antarctica,
+We'll make contour plots of our Synbath relief grid for the Caribbean Sea,
 starting with the default options and adding some tweaks to make it look a bit
 nicer.
 
-First, we need to set the `basemap` to the right region and use an appropriate
-projection. For Antarctica, we will go with a
-[South polar stereographic projection](https://docs.generic-mapping-tools.org/latest/cookbook/map-projections.html#polar-stereographic-map).
-The region can be set using *ISO 3166 country code*. This is a 2-letter code
-for every country/region in the world. GMT supports these codes as arguments to
-`-R`. This means that we can specify the region for Antarctica as `-RAQ`:
+This is the base map (without contour lines) for the script [`4_contours.sh`](4_contours.sh).
 
-Here is a list of ISO 3166 country codes: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+<img src="4_contours_0.png" width="80%">
 
-Further reading: https://docs.generic-mapping-tools.org/latest/cookbook/map-projections.html
+For adding default contour lines just use:
 
-#### Plot with the default contour arguments
+    gmt grdcontour @earth_synbath
 
-See the script [`contours.sh`](contours.sh). The output should look like:
+<img src="4_contours_1.png" width="80%">
 
-<img src="contours.png" width="50%">
+**Note**:  the contour 0 does not exactly matches with the coastline because they are two different data sets.
 
-#### Customize the intervals and pens
+### 7.2. Limit range of contour lines
 
-Now we can tweak this a bit to specify intervals for regular and annotated
-contours. We can also set the line thickness and color (i.e., the *pen*). See
-the script [`contours-custom.sh`](contours-custom.sh). The output should look
-like:
+To only draw the contour lines for negative values (bathymetry) use:
 
-<img src="contours-custom.png" width="50%">
+    gmt grdcontour @earth_synbath -Ln
 
-#### BONUS: Make a fancy plot using different colors for ocean and land
+<img src="4_contours_2.png" width="80%">
 
-Take the customization further by layering two plots: one for the oceans (in
-blue) and one for land (in gray). See the script
-[`contours-fancy.sh`](contours-fancy.sh). The output should look like:
+### 7.3. Only draw greatest contour lines
 
-<img src="contours-fancy.png" width="50%">
+The previous map looks overloaded. You can filter out the contour lines shorter than 500 km with:
 
-Full list of GMT color names: https://docs.generic-mapping-tools.org/latest/gmtcolors.html
+    gmt grdcontour @earth_synbath -Ln -Q500k
 
-#### BONUS: Placing and customizing the colorbar
+<img src="4_contours_3.png" width="80%">
 
-We can control the placement of the colorbar using the `-D` option. We can also
-set the annotation intervals and add axis labels using `-B` (just like for a
-basemap).
-See the script [`images-colorbar.sh`](images-colorbar.sh). The output should look like:
+### 7.4. Sets the contour interval
 
-<img src="images-colorbar.png" width="50%">
+In the previous map, the countour lines are drawn every 1000 m. If you want to draw contours every 200 (m) you can use:
 
-Further reading: https://docs.generic-mapping-tools.org/latest/colorbar.html
+    gmt grdcontour @earth_synbath -Ln -Q500k -C200
 
-#### BONUS: Changing the CPT
+<img src="4_contours_4.png" width="80%">
 
-Custom CPTs can be generated and configured with the `makecpt` command.
-See the script [`images-cpt.sh`](images-cpt.sh). The output should look like:
+### 7.5. Customize the line properties
 
-<img src="images-cpt.png" width="50%">
+If you want to draw dark gray thinnest dashed contour lines you can use: 
 
-Further reading: https://docs.generic-mapping-tools.org/latest/cookbook/cpts.html#of-colors-and-color-legends
-and https://docs.generic-mapping-tools.org/latest/makecpt.html
+    gmt grdcontour @earth_synbath -Ln -Q500k -C200 -Wc0,gray15,dashed 
+
+<img src="4_contours_5.png" width="80%">
+
+
+### 7.6. Add annotated contour lines
+
+Finally, you can use -A to add annotated contour lines. For example if you want to add labels with font 5, within a white box with border for every 2000 contour line you can use:
+
+    gmt grdcontour @earth_synbath -Ln -Q500k -C200 -Wc0,gray15,dashed -A2000+f5+p+gwhite -Wa0
+
+<img src="4_contours_6.png" width="80%">
+
 
 ## Group exercise
+
 
 You will be split into teams to work on an exercise:
 
@@ -209,22 +229,22 @@ You will be split into teams to work on an exercise:
 * Agree on which country you will map and find the [ISO country
   code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) for that
   country (to use as the region)
-* Choose a projection: https://docs.generic-mapping-tools.org/latest/cookbook/map-projections.html
+* Choose a [projection](https://docs.generic-mapping-tools.org/latest/cookbook/map-projections.html):
 * Make a hillshaded pseudo-color plot of Earth relief (with either default CPT
   or not)
 * Overlay contours on your plot. Be careful not to make your plot too busy with
   the contours.
 * Add a colorbar.
-* BONUS: Add a label to the colorbar indicating that the units are meters.
+* BONUS: Add a label to the colorbar indicating that the units.
+* BONUS: Add a frame around the colorbar.
 * BONUS: Add a title to your plot.
 
 You map should look something like this:
 
-<img src="exercise.png" width="70%">
+<img src="5_exercise.png" width="80%">
 
 
-## Bonus
-### Grid registration
+## Bonus: Grid registration
 
 The coordinates of grids and what the data values represent can be specified in
 two ways (known as the grid *registration*):
@@ -257,3 +277,6 @@ specify which version you want by appending `_p` (for pixel) or `_g` (for
 gridline) to the file name (for example, `@earth_relief_10m_p`).
 
 Further reading: https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#global-earth-relief-grids
+
+# Credits
+The group excerise and bonus sections were taken from the [2021 edition](https://github.com/GenericMappingTools/2021-unavco-course/blob/main/grids/README.md) done by Leonardo Uieda.

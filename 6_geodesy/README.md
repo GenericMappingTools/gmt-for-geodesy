@@ -35,7 +35,7 @@ The arrow attributes are mainly controlled by the ***-A[size]*** option with add
 ### Examples
 Below we will try these attributes with examples, first we'll create a script with the following command in your terminal
 ```
-gmt --new-script > demo.sh
+gmt --new-script=bash > demo.sh
 chmod +x demo.sh
 ```
 Then open the script for editing in your script editor. Change the corresponding shell in the first line to your designated shell, and change the following lines to
@@ -50,9 +50,7 @@ Inside we are plotting with 1.0 scale, and 0.65 confidence level corresponds to 
 
 <img src="vectors1.jpg" width="20%">
 
-```
-If you find the image of a different scale from yours, try setting a different PROJ_LENGTH_UNIT, e.g. gmt set PROJ_LENGTH_UNIT in
-```
+    If you find the image of a different scale from yours, try setting a different PROJ_LENGTH_UNIT, e.g. `gmt set PROJ_LENGTH_UNIT in`
 
 If we change the ***-Se1.0/0.65/10*** to ***-Se1.0/0.99/10***, which correspond to 3 sigma, the circle will increase
 

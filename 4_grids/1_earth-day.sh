@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 #
-# Make a global Mollweide map center at 65º W from the Day Satalital Image (Blue Marble).
+# Make a global Mollweide map center at 65º W (W-65) from the Day Satalital Image (Blue Marble).
 
 gmt begin 1_earth-day png
 #   Sets the region and projection of the map for the map. (-B+n plots nohing)
+#   -Rg: specify the global domain (0/360/-90/90)
     gmt basemap -Rg -JW-65/15c -B+n
 
 #   Use the Day Image to make the map 

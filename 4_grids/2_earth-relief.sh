@@ -5,7 +5,6 @@
 
 gmt begin 2_earth-relief png
     # Sets the region and projection of the map for the map. (-B+n plots nohing)
-    #gmt basemap -R"Caribbean Sea" -JM15c -B+n
     gmt basemap -R-88.9369/-59.3818/7.9049/22.7054 -JM15c -B+n
 
     # 2. Plot the GMT Earth relief data

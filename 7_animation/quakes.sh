@@ -9,9 +9,9 @@ gmt begin
         -Ms5+c0.5 -Mi1+c-0.6 -Mt+c0 --TIME_UNIT=d 
 gmt end show
 # 1. Test that script works by just making a single frame (50) as PDF, no movie generated
-# gmt movie quakes.sh -C360p -Ttimes.txt -M50,pdf -Fnone -Nquakes -Lc0 --FORMAT_CLOCK_MAP=-
+# gmt movie quakes.sh -C360p -Ttimes.txt -M50,pdf -Nquakes -Lc0 --FORMAT_CLOCK_MAP=-
 # 2. Test that script works by just making a single frame (50) as PNG, no movie generated
-# gmt movie quakes.sh -C360p -Ttimes.txt -M50,png -Fnone -Nquakes -Lc0 --FORMAT_CLOCK_MAP=-
+# gmt movie quakes.sh -C360p -Ttimes.txt -M50,png -Nquakes -Lc0 --FORMAT_CLOCK_MAP=-
 # 3. Run the movie and build a MP4 animation at 720p resolution
 # gmt movie quakes.sh -C720p -Ttimes.txt -Fmp4 -Nquakes -Pb -Lc0 -Z --FORMAT_CLOCK_MAP=-
 # 4. Run the movie and build a GIF animation at 360p resolution

@@ -8,7 +8,7 @@ Resources for the GMT/MEX demo:
 **Resources**
 
 * The [GMT/MEX documentation](https://github.com/GenericMappingTools/gmtmex/wiki)
-* The [GMT/MEX publication](https://www.youtube.com/c/TheGenericMappingTools)
+* The [GMT/MEX publication](https://doi.org/10.1002/2016GC006723)
 * The [GMT/MEX repository](https://github.com/GenericMappingTools/gmtmex)
 
 **Files**

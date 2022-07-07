@@ -49,6 +49,17 @@ that you get the correct output.
    ```
    ./test_2.sh
    ```
+   A window should pop up with a beachball (black and white quadrant).
+   It should like this:
+
+   ![`gmt-for-geodesy/0_hw1/output/test2.pdf`](output/test2.png)
+
+
+7. Run the [`test_3.sh`](test_3.sh) script:
+
+   ```
+   ./test_3.sh
+   ```
 
    This should produce 2 files called `count.mp4` and `count.webm` in the
    `gmt-for-geodesy/0_hw1` folder. To open the mp4 movie (replace with `.webm`
@@ -62,5 +73,5 @@ that you get the correct output.
    this:
 
    ![`gmt-for-geodesy/0_hw1/output/count.mp4`](output/count.gif)
-7. Tell us if you were able to complete homework 1 (and give us some feedback so we can better prepare for the course) by filling out
+8. Tell us if you were able to complete homework 1 (and give us some feedback so we can better prepare for the course) by filling out
    the following short [survey](https://forms.gle/szi71wDKSmgXgVaY6) by end of Saturday.

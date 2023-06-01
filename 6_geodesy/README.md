@@ -3,8 +3,7 @@
 **Instructor:**
 [Xiaohua Xu](https://www.researchgate.net/profile/Xiaohua_Xu7)
 
-This part of the tutorial is to plot vector (GNSS) data. For gridded data go to https://github.com/GenericMappingTools/2020-unavco-course/tree/master/grids
-Other data at https://drive.google.com/file/d/17NnXWIMeVl6IjMIrnsfXNHIBVeyY9Xtc/view?usp=sharing
+This part of the tutorial is to plot vector (GNSS) data. The needed data for this session is at https://drive.google.com/file/d/1gBDG_bT3feLecKqQrwU1mV18SkC70h9A/view?usp=sharing 
 
 ## Topics
 * [Vector attributes and examples](#vector-attributes)

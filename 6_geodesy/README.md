@@ -144,9 +144,9 @@ gmt velo defo.dat -W0.1p,black -Se0.02/0.65/10 -A10p+eA+n10
 
 Instead of using the above commands to fully control the sampling, one could also use the default ***gmt grdvector*** command to plot the arrows. Replace the above commands with 
 ```
-gmt grdvector dE.grd dN.grd -S50 -I0.1 -W0.1p -Q10p+eA+n10
+gmt grdvector dE.grd dN.grd -S50i -I0.1 -W0.1p -Q10p+eA+n10
 ```
-Note here the ***-S*** option is attached with scale factor that's a inverse of the ***velscale***.
+Note here the ***-S*** option is attached with scale factor that's a inverse of the ***velscale***, the default unit could be others like cm, so if you are not sure, just ignore the appending i.
 
 Then we plot the new faults that are derived from surface fracture maps from a phase-gradient technique (see https://topex.ucsd.edu/SV_7.1/), with a ***W***idth of ***0.5p***, ***red*** line segments.
 ```

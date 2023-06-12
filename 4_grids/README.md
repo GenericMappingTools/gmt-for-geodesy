@@ -1,9 +1,16 @@
 # Plotting grids and images
 
-<img src="2_earth-relief_0.png" width="80%">
+<img aling="center" src="2_earth-relief_0.png" width="80%">
 
 **Instructor:**
-[Federcio Esteban](https://github.com/Esteban82)
+[Federico D. Esteban](https://github.com/Esteban82)
+
+## GMT Modules
+* [grdimage](https://docs.generic-mapping-tools.org/latest/grdimage.html)
+* [colorbar](https://docs.generic-mapping-tools.org/latest/colorbar.html)
+* [grdgradient](https://docs.generic-mapping-tools.org/latest/grdgradient.html)
+* [grdcontour](https://docs.generic-mapping-tools.org/latest/grdcontour.html)
+
 
 ## Topics
 
@@ -18,7 +25,7 @@
 
 ## 1. GMT Remote Data sets
 
-Throughout this section, we'll use GMT's built-in Earth [remote data sets](https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#remote-data-sets). 
+Throughout this section, we'll use GMT's built-in Earth [remote data sets](https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#remote-data-sets).
 
 GMT offers several remote global data grids that you can access via our remote file mechanism. The first time you access one of these files, GMT will download the file and save it to the *server* directory under your GMT user directory [~/.gmt]. From then on we read the local file from there.
 
@@ -26,11 +33,12 @@ GMT offers several remote global data grids that you can access via our remote f
 
 In GMT, you may access such data by specifying the special name:
 
-    @remote_name_rru
+    @remote_name_rru[_reg]
 
   * **@**: tells GMT to search the files in the GMT servers.
   * **remote_name**: name of the remote data set.
   * **rru**: defines the desired resolution.
+  * **reg**: Optionally defines the [registration]. 
 
 **Only** when used in plots the data resolution is optional. If it is not given then we determine a resolution that will result in a nice-looking image.
 
@@ -40,7 +48,7 @@ More info at: https://docs.generic-mapping-tools.org/latest/datasets/remote-data
 
 ## 2. Satelital image plots
 
-<img src="1_earth-day.png" width="80%" aling=center>
+<img src="1_earth-day.png" width="80%">
 
 Let's start by making a satellite image of the earth. The command for plotting images from grids or images is
 [`grdimage`](https://docs.generic-mapping-tools.org/latest/grdimage.html). 
@@ -72,7 +80,7 @@ We serve four global relief grids:
 
 Run script [`2_earth-day.sh`](2_earth-relief.sh) to make a relief map of the Caribbean Sea. The output should look like this:
 
-<img src="2_earth-relief_1.png" width="80%" aling=center>
+<img src="2_earth-relief_1.png" width="80%">
 
 ***
 ## 4. Color Palette Table (CPT)
@@ -89,7 +97,7 @@ For example, if you choose the *oleron* CPT then the should look like this:
 
     gmt grdimage @earth_synbath -Coleron 
 
-<img src="2_earth-relief_2.png" width="60%" aling=center>
+<img src="2_earth-relief_2.png" width="60%">
 
 ***
 ## 5. Color bar
@@ -99,7 +107,7 @@ For that, we use the module [`colorbar`](https://docs.generic-mapping-tools.org/
 
     gmt colorbar
 
-<img src="2_earth-relief_3.png" width="60%" aling=center>
+<img src="2_earth-relief_3.png" width="60%">
 
 
 ### 5.1 Improving the Color bar
@@ -114,7 +122,7 @@ For example, if you want a vertical colormap located to the right of the map, wi
 
     gmt colorbar -DJRM -Baf -By+l"km" -W0.001
 
-<img src="2_earth-relief_4.png" width="60%" aling=center>
+<img src="2_earth-relief_4.png" width="60%">
 
 ***
 ## 6. Hill shading
@@ -126,7 +134,7 @@ For the relief grids this can be done with [`grdimage -I`](https://docs.generic-
     gmt grdimage @earth_synbath -Coleron -I+d
 
 
-<img src="2_earth-relief_5.png" width="80%" aling=center>
+<img src="2_earth-relief_5.png" width="80%">
 
 ***
 ### Challenge: Adding Hill Shading effect to a Satellital Image
@@ -137,7 +145,7 @@ To calculate an intensity grid first.
 
 See the script [`3_earth_day-shading.sh`](3_earth_day-shading.sh). The output should look like:
 
-<img src="3_earth-day-shading.png" width="80%" aling=center>
+<img src="3_earth-day-shading.png" width="80%">
 
 ***
 ## 7. Contour plots

@@ -19,3 +19,6 @@ gmt begin 1_earth-day png
     gmt basemap -B0
 
 gmt end #show
+
+#   Bonus exercise:
+#   Try other resolutions for the earth_day image.

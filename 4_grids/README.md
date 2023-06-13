@@ -11,7 +11,6 @@
 * [grdgradient](https://docs.generic-mapping-tools.org/latest/grdgradient.html)
 * [grdcontour](https://docs.generic-mapping-tools.org/latest/grdcontour.html)
 
-
 ## Topics
 
 1. [GMT Remote Data sets](#1.-gmt-remote-data-sets)
@@ -29,27 +28,31 @@ Throughout this section, we'll use GMT's built-in Earth [remote data sets](https
 
 GMT offers several remote global data grids that you can access via our remote file mechanism. The first time you access one of these files, GMT will download the file and save it to the *server* directory under your GMT user directory [~/.gmt]. From then on we read the local file from there.
 
-**Currently available datasets**: [Link](https://www.generic-mapping-tools.org/remote-datasets/index.html)
-
-### Usage
-
-In GMT, you may access such data by specifying the special name:
-
-    @remote_name[_rru[_reg]]
-
-  * **@**: tells GMT to search the files in the GMT servers.
-  * **remote_name**: name of the remote data set.
-  * **rru**: Optionally defines the desired resolution.
-  * **reg**: Optionally defines the [registration]. 
-
-**Only** when used in plots the data resolution is optional. If it is not given then we determine a resolution that will result in a nice-looking image.
-
-### GMT user directory
-Run this code to show the full path:
+**GMT user directory**: Run this code to show the full path
 ```
 gmt --show-userdir
 ```
 **Tip**: You can place your own data files in this directory as GMT programs will search for files here.
+
+### **Currently available datasets**: 
+
+Currently, there are 10 data sets available. You can see them [here](https://www.generic-mapping-tools.org/remote-datasets/index.html).
+
+### **Usage**
+
+In GMT, you may access such data by specifying the special name:
+
+    @remote_name[_rru]
+
+**Example**: To use a relief grid of the earth with 10 minutes-arc resolution:
+    
+    @earth_relief_10m
+
+  * **@**: tells GMT to search the files in the GMT servers.
+  * **remote_name**: name of the remote data set.
+  * **rru**: Defines the desired resolution and unit.
+
+**Only** when used in plots the data resolution is optional. If it is not given then we determine a resolution that will result in a nice-looking image.
 
 ***
 
@@ -120,7 +123,7 @@ For that, we use the module [`colorbar`](https://docs.generic-mapping-tools.org/
 ### 5.1 Improving the Color bar
 
 Within [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html) there are many optional arguments to modify the default values:
-* [-B](https://docs.generic-mapping-tools.org/latest/colorbar.html#b): Set annotions.
+* [-B](https://docs.generic-mapping-tools.org/latest/colorbar.html#b): Set annotations.
 * [-D](https://docs.generic-mapping-tools.org/latest/colorbar.html#d): defines its location and dimensions.
 * [-W](https://docs.generic-mapping-tools.org/latest/colorbar.html#w): scale the values.
 
@@ -138,7 +141,7 @@ GMT supports automatic hill shading (adding a shadow effect to the image based
 on the gradient of the data values). 
 For the relief grids this can be done with [`grdimage -I`](https://docs.generic-mapping-tools.org/latest/grdimage.html#i) argument. To add a default hill shading effect just use:
 
-    gmt grdimage @earth_synbath -Coleron -I+d
+    gmt grdimage @earth_synbath -Coleron -I
 
 
 <img src="2_earth-relief_5.png" width="80%">

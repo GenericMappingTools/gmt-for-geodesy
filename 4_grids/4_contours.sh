@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 #
-# Make a contour plot of Earth relief in Antarctica
+# Add contour lines to the Caribbean Sea Map
+export http_proxy="http://proxy.fcen.uba.ar:8080"
 
 gmt begin 4_contours png
     # 1. Set the region and projection of the map for the map (-B+n plots nothing).
     gmt basemap -R-88.9369/-59.3818/7.9049/22.7054 -JM15c -B+n
         
     # 2. Plot relief
-    gmt grdimage @earth_synbath -Coleron -I+d
+    gmt grdimage @earth_synbath -Coleron -I
 
     # 3. Draw contour lines from grid. 
     #gmt grdcontour @earth_synbath                      # Draw default contours.

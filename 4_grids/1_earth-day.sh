@@ -7,17 +7,9 @@ gmt begin 1_earth-day png
 #   -Rg: specify the global domain (0/360/-90/90)
     gmt basemap -Rg -JW-65/15c -B+n
 
-#   5. Use DCW-Collections to set the region
-   gmt basemap -JM15c -B+n -RIHO1 # Baltic Sea
-#   gmt basemap -JM15c -B+n -RCSPS  # Caspian Sea
-#   gmt basemap -JM15c -B+n -RBRNI  # Borneo Island
-#   gmt basemap -JM15c -B+n -RUN005 # South America (UN)
-#   gmt basemap -JM15c -B+n -RSAM   # South America (geographically)
-#   gmt basemap -JM15c -B+n -RSHRD  # Sahara Desert
-
 #   2. Use the Day Image to make the map 
-    #gmt grdimage @earth_day_30m    # Resolution define by the user
-    gmt grdimage @earth_day         # Resolution define by GMT
+    gmt grdimage @earth_day_30m     # Resolution define by the user
+    #gmt grdimage @earth_day        # Resolution define by GMT
     #gmt grdimage @earth_night      # Nightime view
 
 #   3. Plot other things on top of the image

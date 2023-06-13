@@ -1,22 +1,33 @@
 #!/usr/bin/env bash
 #
 # Pseudo-color plot of the Earth relief data
-# Make a relief map of the Caribbean Sea.
+# Make a relief map of the Caribbean Sea (IHO27)
 
 gmt begin 2_earth-relief png
     # 1. Set the region and projection of the map for the map. (-B+n plots nothing)
-    gmt basemap -R-88.9369/-59.3818/7.9049/22.7054 -JM15c -B+n
+#    gmt basemap -JM15c -B+n -R-88.9369/-59.3818/7.9049/22.7054
+    
+#   5. Use DCW-Collections to set the region
+   gmt basemap -JM15c -B+n -RIHO27     # Caribbean Sea
+#   gmt basemap -JM15c -B+n -RIHO1      # Baltic Sea
+#   gmt basemap -JM15c -B+n -RCSPS      # Caspian Sea
+#   gmt basemap -JM15c -B+n -RBRNI      # Borneo Island
+#   gmt basemap -JM15c -B+n -RUN005     # South America (UN)
+#   gmt basemap -JM15c -B+n -RSAM       # South America (geographically)
+#   gmt basemap -JM15c -B+n -RSHRD      # Sahara Desert
+    # Full list of DCW-Collections at USER DIR. 
 
     # 2. Plot the GMT Earth relief data
     # gmt grdimage @earth_synbath           # Using default CPT
     # gmt grdimage @earth_synbath -Coleron  # Using another CPT
 
     # 3. With automatic hill shading (-I+d)
-    gmt grdimage @earth_synbath -Coleron -I+d
+     #gmt grdimage @earth_synbath -Coleron -I+d
+     gmt grdimage @earth_synbath_10m -Coleron -I+d  # Lower resolution 
 
     # 4. Add a colorbar
-    # gmt colorbar           # Using the default placement and style.
-    gmt colorbar -DJRM      # Place outside the map to the Right Middle
+     gmt colorbar           # Using the default placement and style.
+    # gmt colorbar -DJRM      # Place outside the map to the Right Middle
 
     # 5. Other options for the colorbar
     # gmt colorbar -DJRM -Ba1000f               # Anotation every 1000 values

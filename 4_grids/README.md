@@ -29,15 +29,17 @@ Throughout this section, we'll use GMT's built-in Earth [remote data sets](https
 
 GMT offers several remote global data grids that you can access via our remote file mechanism. The first time you access one of these files, GMT will download the file and save it to the *server* directory under your GMT user directory [~/.gmt]. From then on we read the local file from there.
 
+**Currently available datasets**: [Link](https://www.generic-mapping-tools.org/remote-datasets/index.html)
+
 ### Usage
 
 In GMT, you may access such data by specifying the special name:
 
-    @remote_name_rru[_reg]
+    @remote_name[_rru[_reg]]
 
   * **@**: tells GMT to search the files in the GMT servers.
   * **remote_name**: name of the remote data set.
-  * **rru**: defines the desired resolution.
+  * **rru**: Optionally defines the desired resolution.
   * **reg**: Optionally defines the [registration]. 
 
 **Only** when used in plots the data resolution is optional. If it is not given then we determine a resolution that will result in a nice-looking image.

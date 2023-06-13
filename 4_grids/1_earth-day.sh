@@ -10,7 +10,7 @@ gmt begin 1_earth-day png
 #   2. Use the Day Image to make the map 
     gmt grdimage @earth_day_30m     # Resolution define by the user
     #gmt grdimage @earth_day        # Resolution define by GMT
-    #gmt grdimage @earth_night      # Nightime view
+    #gmt grdimage @earth_night      # Nighttime view
 
 #   3. Plot other things on top of the image
     gmt coast -N1/thinnest,red     # National Boundaries
@@ -19,6 +19,3 @@ gmt begin 1_earth-day png
     gmt basemap -B0
 
 gmt end #show
-
-# Exercise
-# Change the name of the file to make a map with the nighttime view.

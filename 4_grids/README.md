@@ -3,7 +3,7 @@
 <img aling="center" src="2_earth-relief_0.png" width="80%">
 
 **Instructor:**
-[Federico D. Esteban](https://github.com/Esteban82)
+[Federico D. Esteban](https://github.com/Esteban82) (University of Buenos Aires)
 
 ## GMT Modules
 * [grdimage](https://docs.generic-mapping-tools.org/latest/grdimage.html)

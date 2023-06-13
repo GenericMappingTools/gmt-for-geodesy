@@ -42,13 +42,18 @@ In GMT, you may access such data by specifying the special name:
 
 **Only** when used in plots the data resolution is optional. If it is not given then we determine a resolution that will result in a nice-looking image.
 
-More info at: https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#usage
+### GMT user directory
+Run this code to show the full path:
+```
+gmt --show-userdir
+```
+**Tip**: You can place your own data files in this directory as GMT programs will search for files here.
 
 ***
 
 ## 2. Satelital image plots
 
-<img src="1_earth-day.png" width="80%">
+<img src="1_earth-day.png" width="45%"> <img src="1_earth-night.png" width="45%" >
 
 Let's start by making a satellite image of the earth. The command for plotting images from grids or images is
 [`grdimage`](https://docs.generic-mapping-tools.org/latest/grdimage.html). 
@@ -60,7 +65,7 @@ We serve two [NASA image products](https://www.generic-mapping-tools.org/remote-
 
 ### Exercise
 
-Let's see script [`1_earth-day.sh`](1_earth-day.sh) to make the above map.
+Let's see script [`1_earth-day.sh`](1_earth-day.sh) to make the above maps.
 
 ***
 ## 3. Relief plots

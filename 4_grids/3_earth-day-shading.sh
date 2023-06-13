@@ -4,7 +4,7 @@
 # Make a relief map of the Caribbean Sea.
 
 gmt begin 3_earth-day-shading png
-#   0. Sets the region and projection of the map for the map. (-B+n plots nohing)
+#   0. Set the region and projection of the map for the map (-B+n plots nothing).
     gmt basemap -Rg -JW-65/15c -B+nc
 
 #   1. Calculate intesity grids from the relief grid 

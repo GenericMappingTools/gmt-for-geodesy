@@ -19,7 +19,8 @@
 4. [Color Palette Table (CPT)](#4.-color-palette-table-(cpt))
 5. [Color bar](#5.-color-bar)
 6. [Hill shading](#6.-hill-shading)
-7. [Contour plots](#7.-contour-plots)
+7. [DCW-Collections](#dcw-collections)
+8. [Contour plots](#7.-contour-plots)
 
 ## 1. GMT Remote Data sets
 

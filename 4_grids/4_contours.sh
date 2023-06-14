@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #
 # Add contour lines to the Caribbean Sea Map
-export http_proxy="http://proxy.fcen.uba.ar:8080"
 
 gmt begin 4_contours png
     # 1. Set the region and projection of the map for the map (-B+n plots nothing).
@@ -22,3 +21,6 @@ gmt begin 4_contours png
     #   4. Map frame
     gmt basemap -Baf
 gmt end #show
+
+#   Bonus exercise:
+#   Change the values of the contours.

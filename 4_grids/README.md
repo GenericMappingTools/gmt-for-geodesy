@@ -21,7 +21,6 @@
 6. [Hill shading](#6.-hill-shading)
 7. [Contour plots](#7.-contour-plots)
 
-
 ## 1. GMT Remote Data sets
 
 Throughout this section, we'll use GMT's built-in Earth [remote data sets](https://docs.generic-mapping-tools.org/latest/datasets/remote-data.html#remote-data-sets).
@@ -147,7 +146,7 @@ For the relief grids this can be done with [`grdimage -I`](https://docs.generic-
 <img src="2_earth-relief_5.png" width="80%">
 
 ***
-### Challenge: Adding Hill Shading effect to a Satellital Image
+## Challenge: Adding Hill Shading effect to a Satellital Image
 
 If you want to apply a Hill Shading effect to a satellite image you have to use 
 [`grdgradient`](https://docs.generic-mapping-tools.org/latest/grdgradient.html) 
@@ -156,6 +155,29 @@ To calculate an intensity grid first.
 See the script [`3_earth_day-shading.sh`](3_earth_day-shading.sh). The output should look like:
 
 <img src="3_earth-day-shading.png" width="80%">
+
+### DCW Collections
+
+GMT also offers [collections](https://github.com/GenericMappingTools/dcw-gmt#dcw-collections). of countries and geographic regions to make your maps easily that include:
+* 37 geographics region (e.g. Sahara Desert)
+* 104 seas (e.g. Caribbean sea)
+* 57 lakes, islands and archipelagos (e.g. Sicily Island)
+* 4 continental sector of some countries (Continental Portugal)
+* 46 list of countries (30 are from [UN49](https://unstats.un.org/unsd/methodology/m49/)).
+
+
+### Usage:
+
+You can use them using the TAG or its name:
+
+	gmt coast -RScandinavia -Glightgray -B -pdf Scandinavia
+	gmt coast -RIHO28 -Glightgray -B -pdf MediterraneanSea
+	gmt coast -RSAM -Glightgray -B -pdf SouthAmerica
+
+You casn see the full list [here](https://github.com/GenericMappingTools/dcw-gmt/blob/master/dcw-collections.txt) or with this command:
+
+    gmt pscoast -E+n
+
 
 ***
 ## 7. Contour plots

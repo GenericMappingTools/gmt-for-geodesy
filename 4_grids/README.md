@@ -175,7 +175,7 @@ You can use them using the TAG or its name:
 	gmt coast -RIHO28 -Glightgray -B -pdf MediterraneanSea
 	gmt coast -RSAM -Glightgray -B -pdf SouthAmerica
 
-You casn see the full list [here](https://github.com/GenericMappingTools/dcw-gmt/blob/master/dcw-collections.txt) or with this command:
+You can see the full list [here](https://github.com/GenericMappingTools/dcw-gmt/blob/master/dcw-collections.txt) or with this command:
 
     gmt pscoast -E+n
 
@@ -270,11 +270,11 @@ Finally, you can use -A to add annotated contour lines. For example, if you want
 * BONUS: Add a frame around the colorbar.
 * BONUS: Add a title to your plot.
 
-You map should look something like this:
+Your map should look something like this:
 
 <img src="5_exercise.png" width="80%">
 
-If you have any questions, ask on the Google group chatroom or in the office hours.
+If you have any questions, ask on the Slack chatroom, on the office hours and/or in the [GMT forum](https://forum.generic-mapping-tools.org/).
 
 SOLUTION
 

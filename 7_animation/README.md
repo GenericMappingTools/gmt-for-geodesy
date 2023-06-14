@@ -53,4 +53,4 @@ with us first before you open our scripts - they are there to help you later.
 
 5. Our final earthquake movie at 360p
 
-![`gmt-for-geodesy/animation/4_quakes_360p.mp4`](4_quakes_360p.gif)
+![`gmt-for-geodesy/animation/3_quakes_360p.mp4`](3_quakes_360p.gif)

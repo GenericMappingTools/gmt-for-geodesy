@@ -44,7 +44,7 @@ In GMT, you may access such data by specifying the special name:
 
     @remote_name[_rru]
 
-**Example**: To use a relief grid of the earth with 10 minutes-arc resolution:
+**Example**: To use a relief grid of the earth with 10 minute-arc resolution:
     
     @earth_relief_10m
 
@@ -231,23 +231,15 @@ Finally, you can use -A to add annotated contour lines. For example, if you want
 <img src="4_contours_6.png" width="80%">
 
 
-## Group exercise
-
-
-You will be split into teams to work on an exercise:
-
-1. Discuss with your team which commands and options you would use
-2. Work together to make a script that generates the desired plot
-3. If you have any questions, ask on the Slack chatroom
+## Final exercise
 
 **Make a relief map of a country of your choice:**
 
-* Agree on which country you will map and find the [ISO country
-  code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) for that
-  country (to use as the region)
-* Choose a [projection](https://docs.generic-mapping-tools.org/latest/cookbook/map-projections.html):
+* Choose a country. Find its [ISO country
+  code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) to use as the region.
+* Choose a [projection](https://docs.generic-mapping-tools.org/latest/cookbook/map-projections.html).
 * Make a hillshaded pseudo-color plot of Earth relief (with either default CPT
-  or not)
+  or not).
 * Overlay contours on your plot. Be careful not to make your plot too busy with
   the contours.
 * Add a colorbar.
@@ -259,6 +251,11 @@ You map should look something like this:
 
 <img src="5_exercise.png" width="80%">
 
+If you have any questions, ask on the Google group chatroom or in the office hours.
+
+SOLUTION
+
+Don't look at *one* [`solution`](5_excercise.sh) until you finish you own script.
 
 ## Bonus: Grid registration
 

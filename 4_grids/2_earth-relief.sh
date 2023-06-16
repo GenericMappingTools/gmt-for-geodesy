@@ -10,24 +10,23 @@ gmt begin 2_earth-relief png
     
     # 2. Plot the GMT Earth relief data
     gmt grdimage @earth_synbath           # Using default CPT
-    # gmt grdimage @earth_synbath -Coleron  # Using another CPT
+    #gmt grdimage @earth_synbath -Coleron  # Using another CPT
 
     # 4. With automatic hill shading (-I)
-    # gmt grdimage @earth_synbath -Coleron -I
-    # gmt grdimage @earth_synbath_10m -Coleron -I  # Lower resolution 
+    #gmt grdimage @earth_synbath -Coleron -I
 
     # 3. Add a colorbar
-    # gmt colorbar            # Using the default placement and style.
+    #gmt colorbar            # Using the default placement and style.
 
     # 5. Other options for the colorbar. 
-    # gmt colorbar -DJRM                        # Place outside the map to the Right Middle
-    # gmt colorbar -DJRM -Ba1000f               # Anotation every 1000 values
-    # gmt colorbar -DJRM -Ba1000f -By+l"m"      # Add label in Y axis
-    # gmt colorbar -DJRM -Baf -By+l"km" -W0.001 # Scale the values (to km)
+    #gmt colorbar -DJRM                        # Place outside the map to the Right Middle
+    #gmt colorbar -DJRM -Ba1000f               # Anotation every 1000 values
+    #gmt colorbar -DJRM -Ba1000f -By+l"m"      # Add label in Y axis
+    #gmt colorbar -DJRM -Baf -By+l"km" -W0.001 # Scale the values (to km)
 
 #   6. Map Frame
     gmt basemap -Baf
 gmt end #show
 
 #   Bonus exercise:
-#   Try the other options for the colorbar.
+#   Try other CPT for the map.

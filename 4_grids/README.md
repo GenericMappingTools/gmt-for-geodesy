@@ -88,7 +88,7 @@ We serve four global relief grids:
 
 ### Exercise:
 
-Run script [`2_earth-day.sh`](2_earth-relief.sh) to make a relief map of the Caribbean Sea. The output should look like this:
+Run script [`2_earth-relief.sh`](2_earth-relief.sh) to make a relief map of the Caribbean Sea. The output should look like this:
 
 <img src="2_earth-relief_1.png" width="80%">
 

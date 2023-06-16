@@ -95,7 +95,7 @@ Run script [`2_earth-relief.sh`](2_earth-relief.sh) to make a relief map of the 
 ***
 ## 4. Color Palette Table (CPT)
 
-In the previous map each elevation value was assigned to a color through a colormap or **color palette table** (CPT) as they are called in GMT. By default, it will choose a CPT for you depending on the input grid. 
+In the previous map each elevation value was assigned to a color through a colormap or **color palette table** (CPT) as they are called in GMT. By default, it will choose a CPT for you depending on the input grid.
 
 The Earth relief data is automatically assigned to the topographic CPT named *geo*.
 GMT has **many** CPTs: https://docs.generic-mapping-tools.org/latest/cookbook/cpts.html#of-colors-and-color-legends
@@ -112,7 +112,7 @@ For example, if you choose the *oleron* CPT then the should look like this:
 ***
 ## 5. Color bar
 
-As can be seen in the map above, it would be useful to add a color bar to see the relationship between colors and elavation.
+As can be seen in the map above, it would be useful to add a color bar to see the relationship between colors and elevation.
 For that, we use the module [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html). To just add a colorbar with the defaults values use:
 
     gmt colorbar
@@ -127,7 +127,7 @@ Within [`colorbar`](https://docs.generic-mapping-tools.org/latest/colorbar.html)
 * [-D](https://docs.generic-mapping-tools.org/latest/colorbar.html#d): defines its location and dimensions.
 * [-W](https://docs.generic-mapping-tools.org/latest/colorbar.html#w): scale the values.
 
-For example, if you want a vertical colormap located to the right of the map, with a label and values expressed as km use: 
+For example, if you want a vertical colormap located to the right of the map, with a label and values expressed as km use:
 
 
     gmt colorbar -DJRM -Baf -By+l"km" -W0.001
@@ -137,8 +137,8 @@ For example, if you want a vertical colormap located to the right of the map, wi
 ***
 ## 6. Hill shading
 
-GMT supports automatic hill shading (adding a shadow effect to the image based
-on the gradient of the data values). 
+GMT supports automatic hill shading (adding a shadow effect to the image based 
+on the gradient of the data values).
 For the relief grids this can be done with [`grdimage -I`](https://docs.generic-mapping-tools.org/latest/grdimage.html#i) argument. To add a default hill shading effect just use:
 
     gmt grdimage @earth_synbath -Coleron -I
@@ -151,7 +151,7 @@ For the relief grids this can be done with [`grdimage -I`](https://docs.generic-
 
 If you want to apply a Hill Shading effect to a satellite image you have to use 
 [`grdgradient`](https://docs.generic-mapping-tools.org/latest/grdgradient.html) 
-To calculate an intensity grid first.
+to calculate an intensity grid first.
 
 See the script [`3_earth_day-shading.sh`](3_earth_day-shading.sh). The output should look like:
 
@@ -159,7 +159,7 @@ See the script [`3_earth_day-shading.sh`](3_earth_day-shading.sh). The output sh
 
 ### DCW Collections
 
-GMT also offers [collections](https://github.com/GenericMappingTools/dcw-gmt#dcw-collections). of countries and geographic regions to make your maps easily that include:
+GMT also offers [collections](https://github.com/GenericMappingTools/dcw-gmt#dcw-collections) of countries and geographic regions to make your maps easily that include:
 * 37 geographics region (e.g. Sahara Desert)
 * 104 seas (e.g. Caribbean sea)
 * 57 lakes, islands and archipelagos (e.g. Sicily Island)

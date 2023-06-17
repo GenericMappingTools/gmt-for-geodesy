@@ -86,6 +86,10 @@ But you can also have finer control by directly specifying the length of dashes 
 
 <img src="lines_7.png" width="60%">
 
+And of course you can daisychain those to something like this: `-W9p,red,20_20_5_20`
+
+<img src="lines_8.png" width="60%">
+
 
 
 ## Drawing symbols

@@ -66,6 +66,14 @@ Way better. Now add some color to the line. That's rather easy by adding the col
 
 You can specify colors by name as we did here but also by RGB triplets, RGB Hex values, HSV, CMYK and grey values. See [gmtcolors](https://docs.generic-mapping-tools.org/latest/gmtcolors.html#gmtcolors) for more details and a chart with all 663 unique color names that can be used in GMT.
 
+### Line styling
+
+What if you're not happy with a solid line and want a dashed or a dotted line? GMT has a shorthand for those as well. Just append `,-` for dashed or `,.` for dotted lines after the color in the pen definition.
+
+
+
+
+
 ## Drawing symbols
 
 At the end we will generate this figure

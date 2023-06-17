@@ -42,11 +42,13 @@ Now execute the script and see what we get:
 
 <img src="lines_1.png" width="60%">
 
-Not really what we expected to see. We definitly need some styling. Just add some more options after the text file:
+Not really what we expected to see. The `plot` module needs some more information:
 
 ```
  gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p
 ```
+
+`-JX22c/10c` gives you a cartesian plot 22cm wide by 10cm tall while `-R0/11/0/5` defines the data ranges in X (0 to 11 units) and Y (0 to 5 units) direction. 
 
 ## Drawing symbols
 

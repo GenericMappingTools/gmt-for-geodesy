@@ -78,6 +78,10 @@ while `-W9p,red,.` gives you an automatic dotted line:
 
 <img src="lines_5.png" width="60%">
 
+You can combine those as you want. E.g. `,.-`
+
+<img src="lines_6.png" width="60%">
+
 ## Drawing symbols
 
 At the end we will generate this figure

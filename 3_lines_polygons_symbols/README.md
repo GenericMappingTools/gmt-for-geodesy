@@ -90,6 +90,25 @@ And of course you can daisychain those to something like this: `-W9p,red,20_20_5
 
 <img src="lines_8.png" width="60%">
 
+### Line caps and joints
+
+
+
+```
+#!/usr/bin/env bash
+
+cat > line.txt << END
+ 1 1
+10 4
+END
+
+gmt begin lines png
+  gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p,red,20_20_5_20 \
+    --PS_LINE_CAP=butt
+  gmt plot line.txt -W1p,white,20_20_5_20
+gmt end show
+```
+
 
 
 ## Drawing symbols

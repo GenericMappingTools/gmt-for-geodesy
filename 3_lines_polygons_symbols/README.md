@@ -70,9 +70,13 @@ You can specify colors by name as we did here but also by RGB triplets, RGB Hex 
 
 What if you're not happy with a solid line and want a dashed or a dotted line? GMT has a shorthand for those as well. Just append `,-` for dashed or `,.` for dotted lines after the color in the pen definition.
 
+`-W9p,red,-` gives you an automatic dashed line:
 
+<img src="lines_4.png" width="60%">
 
+while `-W9p,red,.` gives you an automatic dotted line:
 
+<img src="lines_5.png" width="60%">
 
 ## Drawing symbols
 

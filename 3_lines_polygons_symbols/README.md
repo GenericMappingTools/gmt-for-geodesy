@@ -78,9 +78,11 @@ while `-W9p,red,.` gives you an automatic dotted line:
 
 <img src="lines_5.png" width="60%">
 
-You can combine those as you want. E.g. `,.-`
+You can combine those as you want, e.g. `-W9p,red,.-`
 
 <img src="lines_6.png" width="60%">
+
+But you can also have finer control by directly specifying the length of dashes and gaps with a syntax of `<length of dash>_<length of gap>`, e.g. `-W9p,red,20_20`
 
 ## Drawing symbols
 

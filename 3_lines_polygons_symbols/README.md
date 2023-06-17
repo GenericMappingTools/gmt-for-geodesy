@@ -103,11 +103,12 @@ cat > line.txt << END
 END
 
 gmt begin lines png
-  gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p,red,20_20_5_20 \
-    --PS_LINE_CAP=butt
+  gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p,red,20_20_5_20 --PS_LINE_CAP=butt
   gmt plot line.txt -W1p,white,20_20_5_20
 gmt end show
 ```
+
+<img src="lines_9.png" width="60%">
 
 
 

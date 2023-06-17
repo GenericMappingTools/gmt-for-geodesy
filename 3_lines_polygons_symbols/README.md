@@ -4,7 +4,7 @@ The goals of this session is to show how to draw lines & polygons, how to make u
 
 ## Topics
 
-Links to the documentation:
+Links to [the documentation](https://docs.generic-mapping-tools.org/):
 
 * [Line styles](https://docs.generic-mapping-tools.org/latest/cookbook/features.html#specifying-pen-attributes)
 * [Polygon filling](https://docs.generic-mapping-tools.org/latest/cookbook/features.html#specifying-area-fill-attributes)
@@ -42,13 +42,21 @@ Now execute the script and see what we get:
 
 <img src="lines_1.png" width="60%">
 
-Not really what we expected to see. The `plot` module needs some more information:
+Not really what we expected to see. The `plot` module needs some more arguments:
 
 ```
  gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p
 ```
 
-`-JX22c/10c` gives you a cartesian plot 22cm wide by 10cm tall while `-R0/11/0/5` defines the data ranges in X (0 to 11 units) and Y (0 to 5 units) direction. 
+`-JX22c/10c` specifies a cartesian plot 22cm wide by 10cm tall while `-R0/11/0/5` defines the data ranges in X (0 to 11 units) and Y (0 to 5 units) direction. 
+
+`-Ba1` is a very simple argument for annotations. The [-B option](https://docs.generic-mapping-tools.org/latest/gmt.html#b-full) is a powerful beast. Here we just tell it to place annotations every one plot unit.
+
+`-W9p` defines the pen to be plotted 9 point wide. One point equals 1/72 inch.
+
+Lets run the script again:
+
+<img src="lines_2.png" width="60%">
 
 ## Drawing symbols
 

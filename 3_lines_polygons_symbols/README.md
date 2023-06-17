@@ -30,15 +30,19 @@ gmt begin lines png
 gmt end show
 ```
 
-`gmt begin` starts a GMT modern mode session
-`lines` is the name of the resulting file
-`png` is the file format requested, omit if you are happy with pdf (default)
+Lets have a closer look at the GMT commands used:
 
-`gmt plot` calls the plotting module
-`line.txt` is the text file we want to plot
+`gmt begin` starts a GMT modern mode session and `lines` is the name of the resulting file. If you want another output file format than PDF, specify it after the file name. Here we want a PNG file so we specify `png`.
 
-`gmt end` finalises the plot and outputs the result
-`show` opens your plot right away with your systems default viewer for that file type
+`gmt plot` calls the plotting module and `line.txt` is the text file we want to plot.
+
+`gmt end` finalises the plot and outputs the result. Adding `show` opens your plot right away with your systems default viewer for that file type.
+
+Now execute the script and see what we get:
+
+<img src="lines_1.png" width="60%">
+
+Not really what we expected to see. We definitly need some styling.
 
 ## Drawing symbols
 

@@ -42,7 +42,11 @@ Now execute the script and see what we get:
 
 <img src="lines_1.png" width="60%">
 
-Not really what we expected to see. We definitly need some styling.
+Not really what we expected to see. We definitly need some styling. Just add some more options after the text file:
+
+```
+ gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p
+```
 
 ## Drawing symbols
 

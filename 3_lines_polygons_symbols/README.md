@@ -177,6 +177,8 @@ gmt end show
 
 <img src="lines_14.png" width="60%">
 
+See how we get a proper line joint at (1|1)? 
+
 ### Polygon fill
 
 

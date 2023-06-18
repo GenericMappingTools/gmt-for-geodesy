@@ -354,7 +354,7 @@ cat > flights.txt << END
 END
 ```
 
-Now it is time to tackle the [`-Sq` argument](https://docs.generic-mapping-tools.org/latest/plot.html#s). We use `-Sqn1:+f12p,Helvetica-Bold+Lh+v` where `-Sq` indicates a quotede line, `n1` says "one centered label", `+f12p,Helvetica-Bold` specifies the font for the label to be 12p tall Helvetica-Bold, `+Lh` tells `plot` to look in the line headers for the label text and `+v` makes the label follow the line:
+Now it is time to tackle the [`-Sq` argument](https://docs.generic-mapping-tools.org/latest/plot.html#s). We use `-Sqn1:+f12p,Helvetica-Bold+Lh+v` where `-Sq` indicates a quoted line, `n1` says "one centered label", `+f12p,Helvetica-Bold` specifies the font for the label to be 12p tall Helvetica-Bold, `+Lh` tells `plot` to look in the line headers for the label text and `+v` makes the label follow the line:
 
 ```
 gmt begin symbols png
@@ -366,4 +366,15 @@ gmt end show
 
 <img src="plots/symbols_4.png" width="60%">
 
+As we made such a beautiful label marker why not include it in the map:
 
+```
+gmt begin symbols png
+  gmt coast -JM0/20c -R-87/50/-57/60 -W0.5p,grey43 -Sgrey88 -A300 -B
+  gmt plot flights.txt -W5p,red --PS_LINE_CAP=round \
+    -Sqn1:+f12p,Helvetica-Bold+Lh+v
+  gmt plot flights.txt -Skmap_marker/0.5c
+gmt end show
+```
+
+<img src="plots/symbols_5.png" width="60%">

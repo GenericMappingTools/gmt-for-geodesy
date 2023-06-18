@@ -2,6 +2,9 @@
 
 The goals of this session is to show how to draw lines & polygons, how to make use of the rich pen and fill options and finally introduce you to the rabbit hole that are symbols.
 
+* auto-gen TOC:
+{:toc}
+
 ## Topics
 
 Links to [the documentation](https://docs.generic-mapping-tools.org/):

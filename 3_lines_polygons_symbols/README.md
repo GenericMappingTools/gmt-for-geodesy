@@ -177,11 +177,30 @@ gmt end show
 
 <img src="plots/lines_14.png" width="60%">
 
-Observe how we get a proper line joint at (1|1). 
+Observe how we get a proper line joint at (1|1) closing the polygon nicely. 
 
 ### Polygon fill
 
+Filling Polygons is easy. Just add the [fill argument `-G`](https://docs.generic-mapping-tools.org/latest/cookbook/features.html#gfill-attrib) and off you go. `-G` takes colors or patterns. 
 
+First the simple case: we want to fill our polygon with a `lightorange` color so we specify `-Glightorange`:
+
+```
+#!/usr/bin/env bash
+
+cat > line.txt << END
+ 1 1
+10 4
+ 1 4
+ 1 1
+END
+
+gmt begin lines png
+  gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p,red -Glightorange
+gmt end show
+```
+
+<img src="plots/lines_15.png" width="60%">
 
 ## Drawing symbols
 

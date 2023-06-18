@@ -152,7 +152,7 @@ Linear spline: `-W9p,red`
 
 <img src="lines_12.png" width="60%">
 
-Bezier spline: `-W9p,red+s`
+Bezier spline: `-W9p,red+s` - the only difference is the `+s` at the end
 
 <img src="lines_13.png" width="60%">
 

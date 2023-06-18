@@ -1,6 +1,6 @@
 # Plotting Lines, Polygons & Symbols
 
-The goals of this session is to show how to draw lines & polygons, how to make use of the rich pen and fill options and finally introduce you to the rabbit hole that are symbols.
+The goal of this session is to show how to draw lines & polygons, how to make use of the rich pen and fill options and finally introduce you to the rabbit hole that are symbols.
 
 ## Topics
 
@@ -32,7 +32,7 @@ gmt end show
 
 Lets have a closer look at the GMT commands used:
 
-`gmt begin` starts a GMT modern mode session and `lines` is the name of the resulting file. If you want another output file format than PDF, specify it after the file name. Here we want a PNG file so we specify `png`.
+`gmt begin` starts a GMT modern mode session and `lines` is the name of the resulting file. If you want another output file format than PDF, specify it after the file name. In our case we want a PNG file so we specify `png`.
 
 `gmt plot` calls the plotting module and `line.txt` is the text file we want to plot.
 
@@ -262,6 +262,39 @@ Then on to the upper part of the symbol, a nice round circle:
 ```
 
 <img src="plots/mm2.png" width="20%">
+
+As we got the basic shape nailed down, we can now move on to the fill. It is just a repeat of the two shapes already in our file. But we are making sure that there is only fill and no outlines (`-W-` defines no outline) as it would break our illusion of a solid symbol. First the diamond:
+
+```
+0 0.354 0.707 d -W0.1,black
+0 0.707 1     c -W0.1,black
+0 0.354 0.707 d -W- -Gorange
+```
+
+<img src="plots/mm3.png" width="20%">
+
+Followed by the circle:
+
+```
+0 0.354 0.707 d -W0.1,black
+0 0.707 1     c -W0.1,black
+0 0.354 0.707 d -W- -Gorange
+0 0.707 1     c -W- -Gorange
+```
+
+<img src="plots/mm4.png" width="20%">
+
+As a finishing touch we add the black dot which is just another circle with a smaller radius and we have our finished custom map marker symbol:
+
+```
+0 0.354 0.707 d -W0.1,black
+0 0.707 1     c -W0.1,black
+0 0.354 0.707 d -W- -Gorange
+0 0.707 1     c -W- -Gorange
+0 0.707 0.4   c -Gblack
+```
+
+<img src="plots/mm5.png" width="20%">
 
 
 

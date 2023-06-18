@@ -40,7 +40,7 @@ Lets have a closer look at the GMT commands used:
 
 Now execute the script and see what we get:
 
-<img src="lines_1.png" width="60%">
+<img src="plots/lines_1.png" width="60%">
 
 Not really what we expected to see. The `plot` module needs some more arguments:
 
@@ -56,13 +56,13 @@ Not really what we expected to see. The `plot` module needs some more arguments:
 
 Lets run the script again:
 
-<img src="lines_2.png" width="60%">
+<img src="plots/lines_2.png" width="60%">
 
 Way better. Now add some color to the line. That's rather easy by adding the color to the pen definition:
 
 `-W9p,red`
 
-<img src="lines_3.png" width="60%">
+<img src="plots/lines_3.png" width="60%">
 
 You can specify colors by name as we did here but also by RGB triplets, RGB Hex values, HSV, CMYK and grey values. See [gmtcolors](https://docs.generic-mapping-tools.org/latest/gmtcolors.html#gmtcolors) for more details and a chart with all 663 unique color names that can be used in GMT.
 
@@ -74,23 +74,23 @@ What if you're not happy with a solid line and want a dashed or a dotted line? G
 
 `-W9p,red,-` gives you an automatic dashed line:
 
-<img src="lines_4.png" width="60%">
+<img src="plots/lines_4.png" width="60%">
 
 while `-W9p,red,.` gives you an automatic dotted line:
 
-<img src="lines_5.png" width="60%">
+<img src="plots/lines_5.png" width="60%">
 
 You can combine those as you want, e.g. `-W9p,red,.-`
 
-<img src="lines_6.png" width="60%">
+<img src="plots/lines_6.png" width="60%">
 
 But you can also have finer control by directly specifying the length of dashes and gaps with a syntax of `<length of dash>_<length of gap>`, e.g. `-W9p,red,20_20`
 
-<img src="lines_7.png" width="60%">
+<img src="plots/lines_7.png" width="60%">
 
 And of course you can daisychain those to something like this: `-W9p,red,20_20_5_20`
 
-<img src="lines_8.png" width="60%">
+<img src="plots/lines_8.png" width="60%">
 
 ### Line caps
 
@@ -118,15 +118,15 @@ The thin white line illustrates the extend of the input coordinates:
 
 `--PS_LINE_CAP=butt`
 
-<img src="lines_9.png" width="60%">
+<img src="plots/lines_9.png" width="60%">
 
 `--PS_LINE_CAP=round`
 
-<img src="lines_10.png" width="60%">
+<img src="plots/lines_10.png" width="60%">
 
 `--PS_LINE_CAP=square`
 
-<img src="lines_11.png" width="60%">
+<img src="plots/lines_11.png" width="60%">
 
 ### Bezier Splines
 
@@ -150,11 +150,11 @@ gmt end show
 
 Linear spline: `-W9p,red`
 
-<img src="lines_12.png" width="60%">
+<img src="plots/lines_12.png" width="60%">
 
 Bezier spline: `-W9p,red+s` - the only difference is the `+s` at the end
 
-<img src="lines_13.png" width="60%">
+<img src="plots/lines_13.png" width="60%">
 
 ### Closed Polygons
 
@@ -175,9 +175,9 @@ gmt begin lines png
 gmt end show
 ```
 
-<img src="lines_14.png" width="60%">
+<img src="plots/lines_14.png" width="60%">
 
-See how we get a proper line joint at (1|1)? 
+Observe how we get a proper line joint at (1|1). 
 
 ### Polygon fill
 

@@ -126,9 +126,33 @@ The thin white line illustrates the extend of the input coordinates:
 
 <img src="lines_11.png" width="60%">
 
-### Splines
+### Bezier Splines
 
+Normally, all PostScript line drawing is implemented as a linear spline, i.e., we simply draw straight line-segments between the map-projected data points. Use the `+s` modifier after your pen definition to render the line using Bezier splines for a smoother curve. 
 
+*Note*: The spline is fit to the projected 2-D coordinates, not the raw user coordinates (i.e., it is not a spherical surface spline).
+
+```
+#!/usr/bin/env bash
+
+cat > line.txt << END
+ 1 1
+ 5 1
+10 4
+END
+
+gmt begin lines png
+  gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p,red 
+gmt end show
+```
+
+`-W9p,red`
+
+<img src="lines_12.png" size ="60%">
+
+`-W9p,red+s`
+
+<img src="lines_13.png" size ="60%">
 
 
 

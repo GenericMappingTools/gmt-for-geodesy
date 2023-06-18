@@ -156,7 +156,28 @@ Bezier spline: `-W9p,red+s` - the only difference is the `+s` at the end
 
 <img src="lines_13.png" width="60%">
 
+### Closed Polygons
 
+Closed polygons are similar to lines. The only difference is that the first coordinate is repeated again at the end of the text file. This signals GMT that it should plot a closed polygon. 
+
+```
+#!/usr/bin/env bash
+
+cat > line.txt << END
+ 1 1
+10 4
+ 1 4
+ 1 1
+END
+
+gmt begin lines png
+  gmt plot line.txt -JX22c/10c -R0/11/0/5 -Ba1 -W9p,red 
+gmt end show
+```
+
+<img src="lines_14.png" width="60%">
+
+### Polygon fill
 
 
 

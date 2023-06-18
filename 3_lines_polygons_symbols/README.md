@@ -148,11 +148,11 @@ gmt end show
 
 Linear spline: `-W9p,red`
 
-<img src="lines_12.png" size ="60%">
+<img src="lines_12.png" width="60%">
 
 Bezier spline: `-W9p,red+s`
 
-<img src="lines_13.png" size ="60%">
+<img src="lines_13.png" width="60%">
 
 
 

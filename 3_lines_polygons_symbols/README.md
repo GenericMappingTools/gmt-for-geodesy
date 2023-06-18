@@ -92,7 +92,11 @@ And of course you can daisychain those to something like this: `-W9p,red,20_20_5
 
 ### Line caps and joints
 
+A quick note on line caps. The PostScript option `PS_LINE_CAP` determines how the ends of a line segment will be drawn. You have the choice between
 
+* butt cap – no projection beyond the end of the path (default)
+* round cap – a semicircular arc with diameter equal to the line-width is drawn around the end points
+* square cap – a half square of size equal to the line-width extends beyond the end of the path
 
 ```
 #!/usr/bin/env bash
@@ -109,6 +113,15 @@ gmt end show
 ```
 
 <img src="lines_9.png" width="60%">
+
+`--PS_LINE_CAP=round`
+
+<img src="lines_10.png" width="60%">
+
+
+`--PS_LINE_CAP=square`
+
+<img src="lines_11.png" width="60%">
 
 
 

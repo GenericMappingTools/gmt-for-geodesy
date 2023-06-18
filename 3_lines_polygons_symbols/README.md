@@ -68,6 +68,8 @@ You can specify colors by name as we did here but also by RGB triplets, RGB Hex 
 
 ### Line styling
 
+*Note*: See also the chapter [3.14. Specifying pen attributes](https://docs.generic-mapping-tools.org/latest/cookbook/features.html#specifying-pen-attributes) in the cookbook.
+
 What if you're not happy with a solid line and want a dashed or a dotted line? GMT has a shorthand for those as well. Just append `,-` for dashed or `,.` for dotted lines after the color in the pen definition.
 
 `-W9p,red,-` gives you an automatic dashed line:

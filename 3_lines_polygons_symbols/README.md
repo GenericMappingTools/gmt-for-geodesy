@@ -378,3 +378,49 @@ gmt end show
 ```
 
 <img src="plots/symbols_5.png" width="60%">
+
+And, as a final touch, add some labels to the places. That needs to be done in the `flights.txt` file again:
+
+
+
+And a call to the `text` module does the rest:
+
+```
+gmt begin symbols png
+  gmt coast -JM0/20c -R-87/50/-57/60 -W0.5p,grey43 -Sgrey88 -A300 -B
+  gmt plot flights.txt -W5p,red --PS_LINE_CAP=round \
+    -Sqn1:+f12p,Helvetica-Bold+Lh+v
+  gmt plot flights.txt -Skmap_marker/0.5c
+  gmt text flights.txt -F+f12p,Helvetica-Bold+j -Dj11p/7p
+gmt end show
+```
+
+Our final script in all its glory:
+
+```
+#!/usr/bin/env bash
+
+cat > flights.txt << END
+> "Buenos Aires to Frankfurt - 11483 km in 12:24h"
+-58.54 -34.82 RB Buenos Aires
+  8.57  50.03 LB Frankfurt
+> "Frankfurt to Johannesburg - 8658 km in 9:21h"
+  8.57  50.03 LB Frankfurt
+ 28.24 -26.13 RB Johannesburg
+END
+
+gmt begin symbols png
+  gmt coast -JM0/20c -R-87/50/-57/60 -W0.5p,grey43 -Sgrey88 -A300 -B
+  gmt plot flights.txt -W5p,red --PS_LINE_CAP=round \
+    -Sqn1:+f12p,Helvetica-Bold+Lh+v
+  gmt plot flights.txt -Skmap_marker/0.5c
+  gmt text flights.txt -F+f12p,Helvetica-Bold+j -Dj11p/7p
+gmt end show
+```
+
+<img src="plots/symbols_6.png" width="60%">
+
+## Excercise 3
+
+* Draw two Quoted Lines to two different cities on you continent and label the lines with the city names
+* Fill the land polygon with an orange pattern of your choice

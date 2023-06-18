@@ -240,6 +240,10 @@ gmt end show
 
 ### Custom-built Symbol
 
+As a quick demo how to build your own custom symbol we are going to build a map marker you might know from your favourite mapping application:
+
+<img src="plots/mm5.png" width="40%">
+
 
 
 ## Drawing symbols

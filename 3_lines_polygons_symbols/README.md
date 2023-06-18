@@ -90,7 +90,7 @@ And of course you can daisychain those to something like this: `-W9p,red,20_20_5
 
 <img src="lines_8.png" width="60%">
 
-### Line caps and joints
+### Line caps
 
 A quick note on line caps. The PostScript option `PS_LINE_CAP` determines how the ends of a line segment will be drawn. You have the choice between
 
@@ -112,16 +112,23 @@ gmt begin lines png
 gmt end show
 ```
 
+The thin white line illustrates the extend of the input coordinates:
+
+`--PS_LINE_CAP=butt`
+
 <img src="lines_9.png" width="60%">
 
 `--PS_LINE_CAP=round`
 
 <img src="lines_10.png" width="60%">
 
-
 `--PS_LINE_CAP=square`
 
 <img src="lines_11.png" width="60%">
+
+### Splines
+
+
 
 
 

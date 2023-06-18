@@ -224,6 +224,18 @@ GMT comes with 14 basic geometric symbols and offers endless possibilities when 
 
 Read up on the [`-S` argument in `plot`](https://docs.generic-mapping-tools.org/latest/plot.html#s) and study chapter [18. Custom Plot Symbols](https://docs.generic-mapping-tools.org/latest/cookbook/custom-symbols.html#custom-plot-symbols) in the cookbook.
 
+```
+#!/usr/bin/env bash
+
+gmt begin symbols png
+  gmt coast -JM0/20c -R-87/50/-57/60 -W0.5p,grey43 -Sgrey88 -A300 -B
+  echo -10 -30 | gmt plot -Sa2c -W2p,blue -Gorange
+  echo -40 20 | gmt plot -Skvolcano/2c -W2p,red -Gorange 
+gmt end show
+```
+
+<img src="plots/symbols_1.png" width="60%">
+
 ## Drawing symbols
 
 At the end we will generate this figure

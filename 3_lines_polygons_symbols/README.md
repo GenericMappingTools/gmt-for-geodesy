@@ -208,9 +208,15 @@ Lets take pattern 19 and specify `-Gp19` instead of `-Glightorange`:
 
 <img src="plots/lines_16.png" width="60%">
 
-And of course there is a way to add color to a pattern. Lets say we want the same `lightorange` color for pattern 19. `-Gp19+flightorange` replaces the black with the orange color:
+And of course there is a way to add color to a pattern. Lets say we want the same `lightorange` color for pattern 19. `-Gp19+flightorange` replaces the black with the orange color. Again, check chapter [3.16. Specifying area fill attributes](https://docs.generic-mapping-tools.org/latest/cookbook/features.html#specifying-area-fill-attributes) in the cookbook for details.
 
 <img src="plots/lines_17.png" width="60%">
+
+## Excercise 1
+
+* Draw a polygon around the coordinate system origin. Don’t forget to change the range.
+* Draw the line in a 10 point wide green pen
+* Fill the polygon with a blue zig-zag pattern
 
 ## Drawing symbols
 

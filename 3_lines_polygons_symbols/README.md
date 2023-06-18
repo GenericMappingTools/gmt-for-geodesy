@@ -296,6 +296,20 @@ As a finishing touch we add the black dot which is just another circle with a sm
 
 <img src="plots/mm5.png" width="20%">
 
+Lets place our newly-built marker on our map:
+
+```
+#!/usr/bin/env bash
+
+gmt begin symbols png
+  gmt coast -JM0/20c -R-87/50/-57/60 -W0.5p,grey43 -Sgrey88 -A300 -B
+  echo -10 -30 | gmt plot -Sa2c -W2p,blue -Gorange
+  echo -40 20 | gmt plot -Skmap_marker/1c 
+gmt end show
+```
+
+<img src="plots/symbols_2.png" width="60%">
+
 
 
 

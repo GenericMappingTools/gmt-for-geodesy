@@ -179,11 +179,11 @@ gmt end show
 
 Observe how we get a proper line joint at (1|1) closing the polygon nicely. 
 
-### Polygon fill
+## Polygon fill
 
 Filling Polygons is easy. Just add the [fill argument `-G`](https://docs.generic-mapping-tools.org/latest/cookbook/features.html#gfill-attrib) and off you go. `-G` takes colors or patterns. 
 
-First the simple case: we want to fill our polygon with a `lightorange` color so we specify `-Glightorange`:
+First the simplest case: we want to fill our polygon with a `lightorange` color so we specify `-Glightorange`:
 
 ```
 #!/usr/bin/env bash
@@ -201,6 +201,14 @@ gmt end show
 ```
 
 <img src="plots/lines_15.png" width="60%">
+
+On to the patterns. Have a look at `-GP|p` in the cookbook chapter [3.16. Specifying area fill attributes](https://docs.generic-mapping-tools.org/latest/cookbook/features.html#gfill-attrib) and choose one of the [90 predefined patterns](https://docs.generic-mapping-tools.org/latest/cookbook/predefined-patterns.html#predefined-bit-and-hachure-patterns-in-gmt) that come with GMT.
+
+Lets take pattern 19 and specify `-Gp19` instead of `-Glightorange`:
+
+<img src="plots/lines_16.png" width="60%">
+
+
 
 ## Drawing symbols
 

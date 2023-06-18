@@ -224,7 +224,7 @@ GMT comes with 14 basic geometric symbols and offers endless possibilities when 
 
 Read up on the [`-S` argument in `plot`](https://docs.generic-mapping-tools.org/latest/plot.html#s) and study chapter [18. Custom Plot Symbols](https://docs.generic-mapping-tools.org/latest/cookbook/custom-symbols.html#custom-plot-symbols) in the cookbook.
 
-For our first example we will make a nice background map with the help of the  `coast` module and plot a star from the basic geometric symbols and a volcano symbol from the built-in custom symbols on top of it. You are already familiar with the `-W` pen definition and the `-G` fill definition to change both outline and fill.
+For our first example we will make a nice background map with the help of the  [`coast` module](https://docs.generic-mapping-tools.org/latest/coast.html) and plot a star from the basic geometric symbols and a volcano symbol from the built-in custom symbols on top of it. You are already familiar with the `-W` pen definition and the `-G` fill definition to change both outline and fill.
 
 ```
 #!/usr/bin/env bash
@@ -240,9 +240,31 @@ gmt end show
 
 ### Custom-built Symbol
 
-As a quick demo how to build your own custom symbol we are going to build a map marker you might know from your favourite mapping application:
+As a quick demo how to build your own custom symbol we are going to build a map marker you might recognize from your favourite mapping application:
 
 <img src="plots/mm5.png" width="20%">
+
+Having a look at the cookbook chapter [18. Custom Plot Symbols](https://docs.generic-mapping-tools.org/latest/cookbook/custom-symbols.html#custom-plot-symbols) gives you everything you need to build a custom plot symbol. We will layer some basic shapes (diamond and circle) to achieve the desired goal.
+
+Create a new text file and name it `map_marker.def`. This will be our custom symbol definition file. First we plot a diamond with a black outline:
+
+```
+0 0.354 0.707 d -W0.1,black
+```
+
+<img src="plots/mm1.png" width="20%">
+
+Then on to the upper part of the symbol, a nice round circle:
+
+```
+0 0.354 0.707 d -W0.1,black
+0 0.707 1     c -W0.1,black
+```
+
+<img src="plots/mm2.png" width="20%">
+
+
+
 
 
 

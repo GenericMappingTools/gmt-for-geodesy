@@ -224,6 +224,8 @@ GMT comes with 14 basic geometric symbols and offers endless possibilities when 
 
 Read up on the [`-S` argument in `plot`](https://docs.generic-mapping-tools.org/latest/plot.html#s) and study chapter [18. Custom Plot Symbols](https://docs.generic-mapping-tools.org/latest/cookbook/custom-symbols.html#custom-plot-symbols) in the cookbook.
 
+For our first example we will make a nice background map with the help of the  `coast` module and plot a star from the basic geometric symbols and a volcano symbol from the built-in custom symbols on top of it. You are already familiar with the `-W` pen definition and the `-G` fill definition to change both outline and fill.
+
 ```
 #!/usr/bin/env bash
 
@@ -235,6 +237,10 @@ gmt end show
 ```
 
 <img src="plots/symbols_1.png" width="60%">
+
+### Custom-built Symbol
+
+
 
 ## Drawing symbols
 

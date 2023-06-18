@@ -146,13 +146,15 @@ gmt begin lines png
 gmt end show
 ```
 
-`-W9p,red`
+Linear spline: `-W9p,red`
 
 <img src="lines_12.png" size ="60%">
 
-`-W9p,red+s`
+Bezier spline: `-W9p,red+s`
 
 <img src="lines_13.png" size ="60%">
+
+
 
 
 

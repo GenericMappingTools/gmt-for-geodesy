@@ -2,9 +2,6 @@
 
 The goals of this session is to show how to draw lines & polygons, how to make use of the rich pen and fill options and finally introduce you to the rabbit hole that are symbols.
 
-* auto-gen TOC:
-{:toc}
-
 ## Topics
 
 Links to [the documentation](https://docs.generic-mapping-tools.org/):
@@ -220,6 +217,12 @@ And of course there is a way to add color to a pattern. Lets say we want the sam
 * Draw a polygon around the coordinate system origin. Don’t forget to change the range.
 * Draw the line in a 10 point wide green pen
 * Fill the polygon with a blue zig-zag pattern
+
+## Symbols
+
+GMT comes with 14 basic geometric symbols and offers endless possibilities when diving into the world of custom symbols. First we will use some of the basic symbols and later we will examine custom symbols in greater detail.
+
+Read up on the [`-S` argument in `plot`](https://docs.generic-mapping-tools.org/latest/plot.html#s) and study chapter [18. Custom Plot Symbols](https://docs.generic-mapping-tools.org/latest/cookbook/custom-symbols.html#custom-plot-symbols) in the cookbook.
 
 ## Drawing symbols
 

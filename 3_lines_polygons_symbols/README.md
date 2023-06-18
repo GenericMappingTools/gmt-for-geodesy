@@ -208,7 +208,9 @@ Lets take pattern 19 and specify `-Gp19` instead of `-Glightorange`:
 
 <img src="plots/lines_16.png" width="60%">
 
+And of course there is a way to add color to a pattern. Lets say we want the same `lightorange` color for pattern 19. `-Gp19+flightorange` replaces the black with the orange color:
 
+<img src="plots/lines_17.png" width="60%">
 
 ## Drawing symbols
 

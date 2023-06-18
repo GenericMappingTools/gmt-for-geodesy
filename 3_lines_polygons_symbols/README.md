@@ -310,10 +310,32 @@ gmt end show
 
 <img src="plots/symbols_2.png" width="60%">
 
+## Excercise 2
 
+* Make a plot of the continent you are living on 
+* Build a simple house custom symbol and place it where you live
 
+## Quoted Lines
 
+```
+#!/usr/bin/env bash
 
+cat > flights.txt << END
+>
+-58.54 -34.82
+  8.57  50.03
+>
+  8.57  50.03
+ 28.24 -26.13
+END
+
+gmt begin symbols png
+  gmt coast -JM0/20c -R-87/50/-57/60 -W0.5p,grey43 -Sgrey88 -A300 -B
+  gmt plot flights.txt -W5p,red --PS_LINE_CAP=round
+gmt end show
+```
+
+<img src="plots/symbols_3.png" width="60%">
 
 ## Drawing symbols
 

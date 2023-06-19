@@ -383,7 +383,7 @@ And, as a final touch, add some labels to the places. That needs to be done in t
 
 
 
-And a call to the `text` module does the rest:
+And a call to the [`text` module](https://docs.generic-mapping-tools.org/latest/text.html) does the rest:
 
 ```
 gmt begin symbols png

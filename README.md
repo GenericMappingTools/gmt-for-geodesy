@@ -1,6 +1,6 @@
 # GMT for Geodesy Short Course
 
-Planning and material for the 2023 UNAVCO GMT for Geodesy course
+Planning and material for the [2023 EarthScope](https://www.earthscope.org/event/2023-the-generic-mapping-tools-gmt-for-geodesy-short-course/) GMT for Geodesy course.
 
 ## Instructors
 [Paul Wessel](http://www.soest.hawaii.edu/wessel/),
@@ -8,13 +8,13 @@ Planning and material for the 2023 UNAVCO GMT for Geodesy course
 [Joaquim Luis](http://joa-quim.pt),
 [Federico Esteban](https://github.com/Esteban82),
 [Kristof Koch](https://github.com/KristofKoch),
-[Xiaohua Xu](https://www.ig.utexas.edu/staff/xiaohua-eric-xu/)
+[Xiaohua Xu](https://www.ig.utexas.edu/staff/xiaohua-eric-xu/).
 
 ## When
 
-June 26-28 (Monday-Wednesday), 2023
+June 26-28 (Monday-Wednesday), 2023.
 
-Topic: GMT Basics, Symbols and lines, Grids and images, Seismology
+Topic: GMT Basics, Symbols and lines, Grids and images, Seismology.
 
 - Monday June 26 8:30 AM - 10 AM EST - [Time zone converter](https://www.timeanddate.com/worldclock/fixedtime.html?msg=GMT+for+Geodesy+Office+Hours+Part+1+-+GMT+Basics%2C+Symbols+and+lines%2C+Grids+and+images%2C+Seismology&iso=20230626T0830&p1=3918&ah=1&am=30)
 - Wednesday June 28 8:30 AM - 10 AM EST - [Time zone converter](https://www.timeanddate.com/worldclock/fixedtime.html?msg=GMT+for+Geodesy+Office+Hours+Part+2+-+GMT+Basics%2C+Symbols+and+lines%2C+Grids+and+images%2C+Seismology&iso=20230628T0830&p1=3918&ah=1&am=30)
@@ -24,7 +24,7 @@ Topic: Geodesy
 - Tuesday June 27 9:00 PM - 10:30 PM EST - [Time Zone converter](https://www.timeanddate.com/worldclock/fixedtime.html?msg=GMT+for+Geodesy+Office+Hours+Part+3+-+Geodesy&iso=20230628T21&p1=3918&ah=1&am=30)
 
 **Where**:
-On-line via zoom
+On-line via zoom.
 
 **Planning**:
 Participants must **have their own computers** (macOS, Windows, or Linux) with the
@@ -48,7 +48,7 @@ there are a few ways to ask for help:
 * Open an *Issue* on this repository by
   [clicking here](https://github.com/GenericMappingTools/gmt-for-geodesy/issues/new/choose).
   You'll need a GitHub account to do this.
-* Post to the [GMT Community Forum](https://forum.generic-mapping-tools.org/)
+* Post to the [GMT Community Forum](https://forum.generic-mapping-tools.org/).
 
 ## Video, Slides and Notes
 

@@ -52,7 +52,7 @@ there are a few ways to ask for help:
 
 ## Video, Slides and Notes
 
-The lectures are available on this YouTube playlist. The material for each section is available in the folders in this repository.
+The lectures are available on [this YouTube playlist](https://www.youtube.com/watch?v=OmtQ1yTWqC4&list=PL3GHXjKa-p6XP5sL0XPdRJhklVNX-N5ht). The material for each section is available in the folders in this repository.
 
 ## Schedule
 

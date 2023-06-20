@@ -1,7 +1,7 @@
 # GMT for Seismology: Plotting beachballs
 
 **Instructor:**
-[Dongdong Tian](https://me.seisman.info/)
+[Max Jones](https://github.com/maxrjones) (Material developed by [Dongdong Tian](https://me.seisman.info/))
 
 GMT provides 4 seismology modules (see the summary figure below). The goal of this session is to show how to plot beachballs on maps and cross-sections.
 

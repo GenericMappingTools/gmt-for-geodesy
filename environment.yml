@@ -1,0 +1,9 @@
+name: gmt-for-geodesy
+channels:
+    - conda-forge
+    - nodefaults
+dependencies:
+    # Required dependencies
+    - gmt=6.4.0
+    - ffmpeg
+    - graphicsmagick

@@ -115,12 +115,6 @@ To install GMT, we'll use the Windows installer:
 Make sure you also [have a text editor installed](#install-a-text-editor).
 
 
-## Building GMT from source
-
-Follow the ["Building from source" instructions](https://github.com/GenericMappingTools/gmt/blob/master/BUILDING.md)
-from the GMT repository.
-
-
 ## Install a text editor
 
 You'll need a [text editor](https://en.wikipedia.org/wiki/Text_editor) to write GMT
